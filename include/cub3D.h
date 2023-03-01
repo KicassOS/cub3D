@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 17:06:03 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/01 13:50:43 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/03/01 15:06:44 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include "mlx.h"
+# include <X11/X.h>
 
 # define W_KEY 119
 # define A_KEY 97

@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:28:51 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/01 14:21:47 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/03/01 19:37:02 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,27 +59,37 @@ int	ft_strlen(char *str)
 
 void	ft_free_data(t_data *data)
 {
-	if (data->mlx_allocated == true)
-		free(data->mlx_ptr);
 	if (data->window_allocated == true)
 	{
 		mlx_destroy_window(data->mlx_ptr, data->window_ptr);
 		mlx_destroy_display(data->mlx_ptr);
 	}
+	if (data->mlx_allocated == true)
+		free(data->mlx_ptr);
+}
+
+void	ft_close(t_data *data)
+{
+	ft_free_data(data);
+	exit(EXIT_SUCCESS);
 }
 
 int	ft_handle_input(int key, void *data)
 {
-	if (key == W_KEY || key == UP_ARROW)
-		ft_move(data, data->player_pos->x, data->player_pos->y - 1);
-	else if (key == A_KEY || key == LEFT_ARROW)
-		ft_move(data, data->player_pos->x -1, data->player_pos->y);
-	else if (key == S_KEY || key == DOWN_ARROW)
-		ft_move(data, data->player_pos->x, data->player_pos->y + 1);
-	else if (key == D_KEY || key == RIGHT_ARROW)
-		ft_move(data, data->player_pos->x + 1, data->player_pos->y);
-	else if (key == ESC_KEY || key == Q_KEY)
-		ft_close(data, EXIT_FAILURE);
+	if (key == W_KEY)
+		return (0);
+	else if (key == A_KEY)
+		return (0);
+	else if (key == S_KEY)
+		return (0);
+	else if (key == D_KEY)
+		return (0);
+	else if (key == LEFT_ARROW)
+		return (0);
+	else if (key == RIGHT_ARROW)
+		return (0);
+	else if (key == ESC_KEY)
+		ft_close(data);
 	return (0);
 }
 
@@ -111,23 +121,36 @@ void	ft_init_data(t_data *data)
 	data->window_allocated = false;
 	data->mlx_allocated = false;
 	data->mlx_ptr = mlx_init();
-	if (data->mlx_ptr = NULL)
+	if (data->mlx_ptr == NULL)
 		ft_print_error_exit(data, "Could not initialize mlx\n", 2);
 	data->mlx_allocated = true;
 	data->window_ptr = mlx_new_window(data->mlx_ptr, 800, 600, "cub3D");
-	if (data->window_ptr == NULL)
+	if ((data->window_ptr) == NULL)
 		ft_print_error_exit(data, "Could not create the window\n", 3);
 	data->window_allocated = true;
 }
 
+int	ft_close_window_hook(t_data *data)
+{
+	ft_free_data(data);
+	exit(EXIT_SUCCESS);
+}
+
 int	main(int argc, char **argv)
 {
+	(void) argv;
 	t_data	data;
 
-	if (argc < 2)
-	{
-		write(STDERR_FILENO, "cub3D expects only 1 argument, the .cub map\n", 44);
-		return (1);
-	}
+	if (argc != 2)
+		ft_print_error_exit(&data, "cub3D expects one argument\n", 1);
+	ft_init_data(&data);
+	mlx_hook(data.window_ptr, KeyPress, KeyPressMask, \
+	ft_handle_input, (void *) &data);
+	mlx_hook(data.window_ptr, \
+	DestroyNotify, ButtonPressMask, ft_close_window_hook, (void *) &data);
+/*	mlx_hook(data.window_ptr, Expose, ExposureMask, \
+	ft_render, (void *) data);*/
 	mlx_loop(data.mlx_ptr);
+	ft_free_data(&data);
+	return (EXIT_SUCCESS);
 }
