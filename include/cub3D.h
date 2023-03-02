@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 17:06:03 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/01 15:06:44 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:52:10 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,14 @@ typedef struct s_data {
 	double	playerPosY;
 	double	playerDirX;
 	double	playerDirY;
+	double	cameraX;
+	double	rayDirX;
+	double	rayDirY;
 	double	cameraPlaneX;
 	double	cameraPlaneY;
 	double	time;
 	double	oldTime;
+	double	double_screenWidth;
 } t_data;
 
 #endif

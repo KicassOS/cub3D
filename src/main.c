@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:28:51 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/01 19:37:02 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:57:32 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,10 +110,14 @@ void	ft_print_error_exit(t_data *data, char *error_message, char exit_code)
 
 void	ft_init_data(t_data *data)
 {
+	data->double_screenWidth = screenWidth;
 	data->playerPosX = 22;
 	data->playerPosY = 12;
 	data->playerDirX = -1;
 	data->playerDirY = 0;
+	data->cameraX = 0;
+	data->rayDirX = 0;
+	data->rayDirY = 0;
 	data->cameraPlaneX = 0;
 	data->cameraPlaneY = 0.66;
 	data->time = 0;
@@ -124,7 +128,7 @@ void	ft_init_data(t_data *data)
 	if (data->mlx_ptr == NULL)
 		ft_print_error_exit(data, "Could not initialize mlx\n", 2);
 	data->mlx_allocated = true;
-	data->window_ptr = mlx_new_window(data->mlx_ptr, 800, 600, "cub3D");
+	data->window_ptr = mlx_new_window(data->mlx_ptr, screenWidth, screenHeight, "cub3D");
 	if ((data->window_ptr) == NULL)
 		ft_print_error_exit(data, "Could not create the window\n", 3);
 	data->window_allocated = true;
@@ -134,6 +138,20 @@ int	ft_close_window_hook(t_data *data)
 {
 	ft_free_data(data);
 	exit(EXIT_SUCCESS);
+}
+
+int	ft_calculate_camera(t_data *data)
+{
+	int		i;
+
+	i = 0;
+	while (i < screenWidth)
+	{
+		data->cameraX = ((2 * i) / data->double_screenWidth) - 1;
+		data->rayDirX = data->playerDirX + data->cameraPlaneX * data->cameraX;
+		data->rayDirY = data->playerDirY + data->cameraPlaneY * data->cameraX;
+		i++;
+	}
 }
 
 int	main(int argc, char **argv)
