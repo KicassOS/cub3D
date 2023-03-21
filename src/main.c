@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:28:51 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/02 16:57:32 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:34:37 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,15 +152,17 @@ int	ft_calculate_camera(t_data *data)
 		data->rayDirY = data->playerDirY + data->cameraPlaneY * data->cameraX;
 		i++;
 	}
+	return 0;
 }
 
 int	main(int argc, char **argv)
 {
 	(void) argv;
+	(void) argc;
 	t_data	data;
 
-	if (argc != 2)
-		ft_print_error_exit(&data, "cub3D expects one argument\n", 1);
+	// if (argc != 2)
+	// 	ft_print_error_exit(&data, "cub3D expects one argument\n", 1);
 	ft_init_data(&data);
 	mlx_hook(data.window_ptr, KeyPress, KeyPressMask, \
 	ft_handle_input, (void *) &data);
