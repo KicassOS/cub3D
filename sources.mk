@@ -9,8 +9,8 @@ SOURCES		+=                                   		\
 ## SRC/LINE ##
 
 SOURCES		+=                                   		\
-		src/line/get_next_line.c                    	\
-		src/line/get_next_line_utils.c              	\
+		src/linnn/get_next_line.c                    	\
+		src/linnn/get_next_line_utils.c              	\
 
 
 ## SRC/GARBAGE_CTR ##
@@ -35,20 +35,20 @@ SOURCES		+=                                   		\
 ## SRC/LIBFT ##
 
 SOURCES		+=                                   		\
-		src/libft/ft_strdup.c                       	\
-		src/libft/ft_split.c                        	\
-		src/libft/ft_strnstr.c                      	\
-		src/libft/ft_atoi.c                         	\
-		src/libft/ft_isdigit.c                      	\
-		src/libft/ft_strchr.c                       	\
-		src/libft/ft_putchar_fd.c                   	\
-		src/libft/ft_putstr_fd.c                    	\
-		src/libft/ft_putnbr_fd.c                    	\
-		src/libft/ft_striteri.c                     	\
-		src/libft/ft_strrchr.c                      	\
-		src/libft/ft_strlen.c                       	\
-		src/libft/ft_strjoin.c                      	\
-		src/libft/ft_strncmp.c                      	\
+		src/lib/ft_strdup.c                       	\
+		src/lib/ft_split.c                        	\
+		src/lib/ft_strnstr.c                      	\
+		src/lib/ft_atoi.c                         	\
+		src/lib/ft_isdigit.c                      	\
+		src/lib/ft_strchr.c                       	\
+		src/lib/ft_putchar_fd.c                   	\
+		src/lib/ft_putstr_fd.c                    	\
+		src/lib/ft_putnbr_fd.c                    	\
+		src/lib/ft_striteri.c                     	\
+		src/lib/ft_strrchr.c                      	\
+		src/lib/ft_strlen.c                       	\
+		src/lib/ft_strjoin.c                      	\
+		src/lib/ft_strncmp.c                      	\
 
 
 ## SRC/LST_MANAGEMENT ##

@@ -6,7 +6,7 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 09:58:50 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/03 15:29:26 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/23 19:13:16 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <X11/X.h>
 # include <unistd.h>
 # include "struct.h"
-# include "../src/libft/libft.h"
+# include "../src/lib/libft.h"
 # include "function.h"
 
 # define FAILURE -1
