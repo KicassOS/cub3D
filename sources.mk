@@ -5,19 +5,16 @@
 SOURCES		+=                                   		\
 		src/main.c                                  	\
 
-
 ## SRC/LINE ##
 
 SOURCES		+=                                   		\
-		src/linnn/get_next_line.c                    	\
-		src/linnn/get_next_line_utils.c              	\
-
+		src/get_line/get_next_line.c                    \
+		src/get_line/get_next_line_utils.c              \
 
 ## SRC/GARBAGE_CTR ##
 
 SOURCES		+=                                   		\
 		src/garbage_ctr/garbage_collector.c         	\
-
 
 ## SRC/PARSING ##
 
@@ -31,10 +28,14 @@ SOURCES		+=                                   		\
 		src/parsing/parse_requirement.params.c      	\
 		src/parsing/get_map.c 							\
 
+## SRC/GETTERS ##
+SOURCES		+=                                   		\
+		src/getters/getters_direction.c                 \
+		src/getters/getters_rgb_path.c						
 
 ## SRC/LIBFT ##
 
-SOURCES		+=                                   		\
+SOURCES		+=                                   	\
 		src/lib/ft_strdup.c                       	\
 		src/lib/ft_split.c                        	\
 		src/lib/ft_strnstr.c                      	\
@@ -58,7 +59,6 @@ SOURCES		+=                                   		\
 		src/lst_management/print_lst.c              	\
 		src/lst_management/add_lst.c                	\
 		src/lst_management/init_lst.c					\
-
 
 ## SRC/ERROR_HANDLER ##
 

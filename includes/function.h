@@ -61,5 +61,12 @@ void *ft_malloc(t_data *data, int len);
 int	add_addr_to_garbage(t_data **data, void *ptr);
 // ERROR HANDLER
 int error_handler(t_data *data, int error);
+// getters
+char *get_north_path(t_data *data);
+char *get_south_path(t_data *data);
+char *get_west_path(t_data *data);
+char *get_east_path(t_data *data);
+char *get_floor_path(t_data *data);
+char *get_cell_path(t_data *data);
 
 #endif
