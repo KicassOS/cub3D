@@ -89,7 +89,6 @@ int requirement_map_checker(t_data *data)
     return (SUCCESS);
 }
 
-
 int check_only_one(t_data *data, char *line)
 {
     int i;

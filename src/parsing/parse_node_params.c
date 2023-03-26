@@ -12,10 +12,6 @@
 
 #include "../includes/define.h"
 
-
-//TO-DO
-// CREATE FILE FOR TEXTURE IF YOU WANNA PASS THAT TEST
-//
 static
 int check_legit_path(char *path)
 {

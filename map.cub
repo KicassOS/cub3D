@@ -1,7 +1,7 @@
-EA  ./north.xpm
+EA  ./ea.xpm
 NO  ./north.xpm
-SO  ./north.xpm
-WE  ./north.xpm
+SO  ./so.xpm
+WE  ./we.xpm
 
 C 055,000,160
 F 1,1,1

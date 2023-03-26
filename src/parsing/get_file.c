@@ -94,7 +94,7 @@ char *cub_to_str(t_data *data, char *file)
             tmp = NULL;
         }
     }
-    get_next_line(-1); // sending a negatif value to my get_next_line in order to free the '\n' 
+    get_next_line(-1); // sending a negatif value to my get_next_line in order to free the last '\n' 
     close(fd);
     return (file_store);
 }

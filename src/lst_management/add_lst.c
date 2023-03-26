@@ -20,7 +20,11 @@ t_node *get_last_node(t_node *node)
 		node = node->next;
 	return (node);
 }
-
+/*
+@MARK
+Those functions below are use to create/add node of their own data type.
+You can use the same code structures to implement your own linked list adding function
+*/
 int	add_node_params(t_data **data, char *line)
 {
 	t_params	*tmp;
