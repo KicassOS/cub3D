@@ -6,38 +6,40 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:15:19 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/07 11:05:46 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/26 17:46:23 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/define.h"
 
-int is_not_params(t_data *data, char *line)
+int	is_not_params(t_data *data, char *line)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (!line)
-        error_handler(data, INVALID_VALUE);
-    while (line[i] == ' ' || (line[i] >= '\a' && line[i] <= '\r'))
-        i++;
-    if (line[i] == '1')
-        return (FAILURE);
-    if (line[i] == '0')
-        return (FAILURE);
-    return (SUCCESS);
+	i = 0;
+	if (!line)
+		error_handler(data, INVALID_VALUE);
+	while (line[i] == ' ' || (line[i] >= '\a' && line[i] <= '\r'))
+		i++;
+	if (line[i] == '1')
+		return (FAILURE);
+	if (line[i] == '0')
+		return (FAILURE);
+	return (SUCCESS);
 }
 
-int fill_params(t_data *data)
+int	fill_params(t_data *data)
 {
-    if (!data->file_arr)
-        return (INVALID_VALUE);
-    data->last_params_line = 0;
-    while(is_not_params(data, data->file_arr[data->last_params_line]) == SUCCESS)
-    {
-        if (add_node_params(&data, data->file_arr[data->last_params_line]) != SUCCESS)
-            return (MALLOC_ERROR); // MALLOC FAILURE
-        data->last_params_line++;
-    }
-    return (SUCCESS);
+	if (!data->file_arr)
+		return (INVALID_VALUE);
+	data->last_params_line = 0;
+	while (is_not_params(data,
+			data->file_arr[data->last_params_line]) == SUCCESS)
+	{
+		if (add_node_params(&data,
+				data->file_arr[data->last_params_line]) != SUCCESS)
+			return (MALLOC_ERROR);
+		data->last_params_line++;
+	}
+	return (SUCCESS);
 }

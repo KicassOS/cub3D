@@ -6,17 +6,17 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 13:08:27 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/03 13:18:30 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/26 18:27:21 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef LIBFT_H
+#ifndef LIBFT_H
 # define LIBFT_H
 
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-#include "../includes/define.h"
+# include "../includes/define.h"
 /*
  *      check "is" function
  *

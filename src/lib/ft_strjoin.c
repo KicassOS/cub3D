@@ -6,7 +6,7 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:50:00 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/03 13:12:40 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/26 17:52:15 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strjoin(t_data *data, char *s1, char *s2)
 	int		k;
 	char	*res;
 
-	
 	i = 0;
 	j = 0;
 	k = 0;

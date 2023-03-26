@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 11:34:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2021/12/06 12:01:46 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/26 16:39:20 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strrchr(const char *str, int c)

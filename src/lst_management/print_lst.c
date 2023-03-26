@@ -6,7 +6,7 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 11:16:38 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/02 22:09:53 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/26 17:36:28 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_params_content(t_params *node)
 {
-	t_params  *tmp;
+	t_params	*tmp;
 
 	if (node == NULL)
 		return ;
@@ -28,7 +28,7 @@ void	print_params_content(t_params *node)
 
 void	print_direction_list(t_direction *node)
 {
-	t_direction  *tmp;
+	t_direction	*tmp;
 
 	if (node == NULL)
 		return ;
@@ -42,7 +42,7 @@ void	print_direction_list(t_direction *node)
 
 void	print_colors_list(t_colors *node)
 {
-	t_colors  *tmp;
+	t_colors	*tmp;
 
 	if (node == NULL)
 		return ;

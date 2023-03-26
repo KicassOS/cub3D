@@ -6,7 +6,7 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:40:36 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/06 09:40:26 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/26 17:55:32 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*read_line(int fd, char *save, int *v_read)
 		return (NULL);
 	*v_read = 1;
 	while (!ft_strchr(save, '\n') && *v_read != 0)
-	{	
+	{
 		*v_read = read(fd, buffer, BUFFER_SIZE);
 		if (*v_read == -1)
 		{

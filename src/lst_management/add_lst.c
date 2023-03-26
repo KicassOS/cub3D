@@ -6,13 +6,13 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:08:30 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/03 12:57:29 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/26 17:35:05 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/define.h"
 
-t_node *get_last_node(t_node *node)
+t_node	*get_last_node(t_node *node)
 {
 	if (!node)
 		return (NULL);
@@ -22,9 +22,11 @@ t_node *get_last_node(t_node *node)
 }
 /*
 @MARK
-Those functions below are use to create/add node of their own data type.
-You can use the same code structures to implement your own linked list adding function
+Those functions below are used to create/add node of their own data type.
+You can use the same code structures to implement your
+own linked list adding function.
 */
+
 int	add_node_params(t_data **data, char *line)
 {
 	t_params	*tmp;
@@ -61,18 +63,19 @@ int	add_node_colors(t_data **data, char *name, char *rgb)
 	tmp = (t_colors *)get_last_node((t_node *)(tmp));
 	tmp->next = (t_colors *)lst_new_rgb(*data, name, rgb);
 	if (!tmp->next)
-		return (MALLOC_ERROR);;
+		return (MALLOC_ERROR);
 	return (SUCCESS);
 }
 
-int add_direction_params(t_data **data, char *name, char *path)
+int	add_direction_params(t_data **data, char *name, char *path)
 {
 	t_direction	*tmp;
 
 	tmp = NULL;
 	if (!(*data)->direction)
 	{
-		(*data)->direction = (t_direction *)lst_new_direction(*data, name, path);
+		(*data)->direction = (t_direction *)lst_new_direction(*data, name,
+				path);
 		if (!(*data)->direction)
 			return (MALLOC_ERROR);
 		return (SUCCESS);
