@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   function.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 18:55:16 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/28 06:40:44 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int		is_floor(char c);
 int		check_only_one(t_data *data, char *line);
 int		file_to_array(t_data *data, char *file_store);
 int		check_wall(t_data *data, char *line);
+bool	ft_valid_extension(char *filename);
 int		valid_arg(char *arg);
 int		check_only_one_not_parsed(t_data *data, char *line);
 char	*get_right_line(t_data *data, char *file_line, char *tmp, int *detect);

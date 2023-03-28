@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:48:11 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 18:08:16 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/28 06:54:48 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	valid_arg(char *arg)
 						2);
 		exit(FAILURE);
 	}
-	if (ft_strncmp(ft_strchr(arg, '.'), ".cub", 4) != SUCCESS)
+	if (ft_valid_extension(arg) == false)
 	{
 		ft_putstr_fd("Error :\nfile name must be named as: <filename>.cub\n", \
 						2);

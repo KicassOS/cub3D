@@ -27,6 +27,7 @@ SOURCES		+=                                    		\
 SOURCES		+=                                    		\
 		src/parsing/parse_node_params.c              	\
 		src/parsing/get_map.c                        	\
+		src/parsing/get_file_extension.c             	\
 		src/parsing/get_file_utils.c                 	\
 		src/parsing/get_map_utils.c                  	\
 		src/parsing/parsing_utils.c                  	\
