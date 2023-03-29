@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:00:01 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 18:38:40 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/29 09:38:46 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,74 @@ typedef struct s_require_params
 	int					cell;
 }						t_require_params;
 
+typedef struct s_img
+{
+	void	*ptr;
+	char	*address;
+	int		bpp;
+	int		line_length;
+	int		endianness;
+}	t_img;
+
+typedef struct s_textures
+{
+	int		sky_colors[3];
+	int		floor_colors[3];
+	t_img	north_img;
+	t_img	east_img;
+	t_img	south_img;
+	t_img	west_img;
+}	t_textures;
+
+typedef struct s_player
+{
+	double	x;
+	double	y;
+	char	orientation;
+}	t_player;
+
+typedef struct s_keys
+{
+	bool	w_pressed;
+	bool	s_pressed;
+	bool	a_pressed;
+	bool	d_pressed;
+}	t_keys;
+
+typedef struct s_camera
+{
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+}	t_camera;
+
+typedef struct s_raycaster
+{
+	double	camera_x;
+	double	raydir_x;
+	double	raydir_y;
+	double	sidedist_x;
+	double	sidedist_y;
+	double	deltadist_x;
+	double	deltadist_y;
+	double	distance;
+	double	step;
+	int		step_x;
+	int		step_y;
+	bool	hit;
+	int		side;
+	double	wall_x;
+	int		tex_x;
+	int		tex_y;
+	double	tex_pos;
+	int		map_x;
+	int		map_y;
+	int		line_height;
+	int		draw_start;
+	int		draw_end;
+}	t_raycaster;
+
 typedef struct s_data
 {
 	t_garbage			*garbage_ctr;
@@ -56,10 +124,19 @@ typedef struct s_data
 	unsigned int		last_params_line;
 	t_require_params	params_required;
 	t_colors			*colors;
+	t_textures			textures;
 	t_direction			*direction;
 	unsigned int		map_size;
 	char				**map;
 	char				**file_arr;
+	void				*mlx_ptr;
+	bool				mlx_allocated;
+	bool				window_allocated;
+	void				*window_ptr;
+	t_player			player;
+	t_keys				keys_pressed;
+	t_img				screen;
+	t_camera			camera;
 }						t_data;
 
 typedef struct s_node

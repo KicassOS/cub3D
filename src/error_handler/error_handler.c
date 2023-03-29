@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:16:08 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:28:29 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/29 05:57:11 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	error_handler(t_data *data, int error)
 	if (error == MALLOC_ERROR)
 		malloc_error(data);
 	else if (error == INVALID_FILE)
-		invalid_file();
+		invalid_file(data);
 	else if (error == MAP_ERROR)
 		map_error(data);
 	else if (error == PARAMS_ERROR)

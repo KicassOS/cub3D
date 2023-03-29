@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   garbage_collector.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:45:02 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:21:28 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/03/29 07:14:57 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,19 @@ void	*ft_malloc(t_data *data, int len)
 		error_handler(data, MALLOC_ERROR);
 	return (node);
 }
+
+void	ft_free_images(t_data *data)
+{
+	if (data->textures.north_img.ptr)
+		mlx_destroy_image(data->mlx_ptr, data->textures.north_img.ptr);
+	if (data->textures.east_img.ptr)
+		mlx_destroy_image(data->mlx_ptr, data->textures.east_img.ptr);
+	if (data->textures.south_img.ptr)
+		mlx_destroy_image(data->mlx_ptr, data->textures.south_img.ptr);
+	if (data->textures.west_img.ptr)
+		mlx_destroy_image(data->mlx_ptr, data->textures.west_img.ptr);
+}
+
 /*
 @MARK
 This function is used only once at the end of the program and
@@ -50,4 +63,26 @@ void	ft_free(t_data *data)
 		lst = tmp;
 	}
 	data->garbage_ctr = NULL;
+	if (data->window_allocated == true)
+	{
+		mlx_destroy_window(data->mlx_ptr, data->window_ptr);
+		mlx_destroy_display(data->mlx_ptr);
+	}
+	if (data->mlx_allocated == true)
+		free(data->mlx_ptr);
+	ft_free_images(data);
+}
+
+void	ft_free_exit(t_data *data)
+{
+	ft_free(data);
+	exit(EXIT_SUCCESS);
+}
+
+void	ft_error_free_exit(t_data *data, char *err_msg)
+{
+	ft_free(data);
+	if (err_msg != NULL)
+		ft_putstr_fd(err_msg, STDERR_FILENO);
+	exit(EXIT_FAILURE);
 }

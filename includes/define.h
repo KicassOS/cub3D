@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 09:58:50 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/28 06:40:53 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/03/29 08:09:07 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include <sys/wait.h>
 # include <unistd.h>
 # include <stdbool.h>
-// # include "./minilibx-linux/mlx.h"
 # include <X11/X.h>
 # include <X11/keysym.h>
 # include <unistd.h>
@@ -41,5 +40,29 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
+
+# define SCREEN_WIDTH 1024
+# define SCREEN_HEIGHT 800
+
+# define TEXTURE_WIDTH 42
+# define TEXTURE_HEIGHT 42
+
+# define W_KEY 119
+# define A_KEY 97
+# define S_KEY 115
+# define D_KEY 100
+
+# define Q_KEY 113
+# define ESC_KEY 65307
+
+# define UP_ARROW 65362
+# define LEFT_ARROW 65361
+# define DOWN_ARROW 65364
+# define RIGHT_ARROW 65363
+
+# define VERTICAL 0
+# define HORIZONTAL 1
+
+# define WALL '1'
 
 #endif
