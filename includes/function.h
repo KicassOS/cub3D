@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/29 08:32:05 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/03/30 20:58:59 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void		ft_move_player(t_data *data);
 int			ft_create_trgb(int t, int r, int g, int b);
 void		ft_pixel_put(t_img *img, int x, int y, unsigned int color);
 int			ft_extract_pixel(t_img *img, int x, int y);
-u_int32_t	ft_get_color(t_data *data, t_raycaster *rayc);
+u_int32_t	ft_get_side_pixel(t_data *data, t_raycaster *rayc);
 // raycasting
 void		ft_init_raycaster(t_data *data, t_raycaster *rayc, int x);
 void		ft_init_rays(t_data *data, t_raycaster *rayc);
