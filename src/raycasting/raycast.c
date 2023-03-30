@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 04:34:19 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/29 08:15:38 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:08:29 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_init_raycaster(t_data *data, t_raycaster *rayc, int x)
 	rc->map_y = (int)data->player.y;
 	rc->deltadist_x = fabs(1 / rc->raydir_x);
 	rc->deltadist_y = fabs(1 / rc->raydir_y);
-	rc->hit = 0;
+	rc->hit = false;
 }
 
 void	ft_init_rays(t_data *data, t_raycaster *rayc)
@@ -99,6 +99,6 @@ void	ft_get_wall_pixel(t_data *data, t_raycaster *rayc)
 	if (rayc->side == HORIZONTAL && rayc->raydir_y < 0)
 		rayc->tex_x = TEXTURE_WIDTH - rayc->tex_x - 1;
 	rayc->step = 1.0 * TEXTURE_HEIGHT / rayc->line_height;
-	rayc->texPos = (rayc->draw_start - (SCREEN_HEIGHT / 2) \
+	rayc->tex_pos = (rayc->draw_start - (SCREEN_HEIGHT / 2) \
 	+ rayc->line_height / 2) * rayc->step;
 }
