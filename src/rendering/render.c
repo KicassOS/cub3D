@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 05:49:14 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/30 21:09:00 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:48:21 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	ft_draw_vertical_strip(t_data *data, t_raycaster *rayc, int x)
 	while (++y < rayc->draw_start)
 	{
 		ft_pixel_put(&data->canvas, x, y,
-			create_trgb(256, data->textures.sky_colors[0],
+			ft_create_trgb(256, data->textures.sky_colors[0],
 				data->textures.sky_colors[1], data->textures.sky_colors[2]));
 	}
 	y = rayc->draw_start;
@@ -45,7 +45,7 @@ static void	ft_draw_vertical_strip(t_data *data, t_raycaster *rayc, int x)
 	while (y < SCREEN_HEIGHT)
 	{
 		ft_pixel_put(&data->canvas, x, y,
-			create_trgb(256, data->textures.floor_colors[0], \
+			ft_create_trgb(256, data->textures.floor_colors[0], \
 			data->textures.floor_colors[1], data->textures.floor_colors[2]));
 		y += 1;
 	}
