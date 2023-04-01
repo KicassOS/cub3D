@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_requirement.params.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 17:00:15 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:45:57 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:45:08 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 int	requirement_params_checker(t_data *data)
 {
