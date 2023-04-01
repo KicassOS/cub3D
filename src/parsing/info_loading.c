@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 05:41:51 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/01 18:32:03 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:10:35 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_load_player_orientation(t_data *data)
 		}
 		i++;
 	}
+		printf("DELETE THESE 2 PRINTF\n");
 	printf("orientation: %c\n", data->player.orientation);
 }
 
@@ -56,7 +57,20 @@ void	ft_load_player_position(t_data *data)
 		}
 		i++;
 	}
+		printf("DELETE THESE 2 PRINTF\n");
 	printf("position: x = %f; y = %f\n", data->player.x, data->player.y);
+}
+
+void	ft_load_tex(t_img *img, char *path, int *size, t_data *data)
+{
+	img->ptr = mlx_xpm_file_to_image(data->mlx_ptr, path, size, size);
+	if (!(img->ptr))
+		ft_error_free_exit(data, "Error:\nCould not convert xpm file \
+		to image\n");
+	img->address = mlx_get_data_addr(img->ptr, &(img->bpp), \
+	&(img->line_length), &(img->endianness));
+	if (!(img->address))
+		ft_error_free_exit(data, "Error:\nCould not get address of image\n");
 }
 
 void	ft_load_textures(t_data *data)
@@ -72,17 +86,14 @@ void	ft_load_textures(t_data *data)
 	west_path = ft_get_west_path(data);
 	if (!north_path || !east_path || !south_path || !west_path)
 		ft_error_free_exit(data, "Error:\nCould not get texture paths\n");
-	data->textures.north_img.ptr = mlx_xpm_file_to_image(data->mlx_ptr \
-	, north_path, &(data->tex_width), &(data->tex_height));
-	data->textures.east_img.ptr = mlx_xpm_file_to_image(data->mlx_ptr \
-	, east_path, &(data->tex_width), &(data->tex_height));
-	data->textures.south_img.ptr = mlx_xpm_file_to_image(data->mlx_ptr \
-	, south_path, &(data->tex_width), &(data->tex_height));
-	data->textures.west_img.ptr = mlx_xpm_file_to_image(data->mlx_ptr \
-	, west_path, &(data->tex_width), &(data->tex_height));
-	if (!data->textures.north_img.ptr || !data->textures.east_img.ptr \
-	|| !data->textures.south_img.ptr || !data->textures.west_img.ptr)
-		ft_error_free_exit(data, "Error:\nCould not convert xpm to images\n");
+	ft_load_tex(&(data->textures.north_img), north_path, \
+	&(data->tex_size), data);
+	ft_load_tex(&(data->textures.east_img), east_path, \
+	&(data->tex_size), data);
+	ft_load_tex(&(data->textures.south_img), south_path, \
+	&(data->tex_size), data);
+	ft_load_tex(&(data->textures.west_img), west_path, \
+	&(data->tex_size), data);
 }
 
 void	ft_load_floor_ceiling(t_data *data)

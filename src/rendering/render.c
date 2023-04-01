@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 05:49:14 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/01 03:49:22 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:02:20 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_draw_vertical_strip(t_data *data, t_raycaster *rayc, int x)
 	y = rayc->draw_start;
 	while (y < rayc->draw_end)
 	{
-		rayc->tex_y = (int)rayc->tex_pos & (TEXTURE_HEIGHT - 1);
+		rayc->tex_y = (int)rayc->tex_pos & (TEXTURE_SIZE - 1);
 		rayc->tex_pos += rayc->step;
 		ft_pixel_put(&data->screen, x, y, ft_get_side_pixel(data, rayc));
 		y += 1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 04:34:19 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/01 03:47:47 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:02:25 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,12 @@ void	ft_get_wall_pixel(t_data *data, t_raycaster *rayc)
 	else
 		rayc->wall_x = (int)data->player.x + rayc->distance * rayc->raydir_x;
 	rayc->wall_x -= floor(rayc->wall_x);
-	rayc->tex_x = (int)(rayc->wall_x * (double)TEXTURE_WIDTH);
+	rayc->tex_x = (int)(rayc->wall_x * (double)TEXTURE_SIZE);
 	if (rayc->side == VERTICAL && rayc->raydir_x > 0)
-		rayc->tex_x = TEXTURE_WIDTH - rayc->tex_x - 1;
+		rayc->tex_x = TEXTURE_SIZE - rayc->tex_x - 1;
 	if (rayc->side == HORIZONTAL && rayc->raydir_y < 0)
-		rayc->tex_x = TEXTURE_WIDTH - rayc->tex_x - 1;
-	rayc->step = 1.0 * TEXTURE_HEIGHT / rayc->line_height;
+		rayc->tex_x = TEXTURE_SIZE - rayc->tex_x - 1;
+	rayc->step = 1.0 * TEXTURE_SIZE / rayc->line_height;
 	rayc->tex_pos = (rayc->draw_start - (SCREEN_HEIGHT / 2) \
 	+ rayc->line_height / 2) * rayc->step;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:00:01 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 08:37:37 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 20:41:41 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,8 +140,7 @@ typedef struct s_data
 	t_keys				keys_pressed;
 	t_img				screen;
 	t_camera			camera;
-	int					tex_width;
-	int					tex_height;
+	int					tex_size;
 }	t_data;
 
 typedef struct s_node

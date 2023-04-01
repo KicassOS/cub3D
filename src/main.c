@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:34:29 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 18:23:55 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:03:20 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_init_hooks(t_data *data)
 int	main(int ac, char **av)
 {
 	t_data	data;
-
+printf("REMOVE -g flag from makefile after project is done, dont delete this until then\n");
 	if (ac != 2)
 	{
 		ft_putstr_fd("Error:\ncub3D expects one argument: the map to load\n"\
