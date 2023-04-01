@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 15:32:53 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:42:53 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 05:23:03 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Those functions below are used to get
 the rgb value as char pointer of the map colors.
 */
 
-char	*get_floor_path(t_data *data)
+char	*ft_get_floor_path(t_data *data)
 {
 	t_colors	*tmp;
 
@@ -34,7 +34,7 @@ char	*get_floor_path(t_data *data)
 	return (tmp->rgb);
 }
 
-char	*get_cell_path(t_data *data)
+char	*ft_get_ceil_path(t_data *data)
 {
 	t_colors	*tmp;
 

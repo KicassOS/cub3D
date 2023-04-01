@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 15:32:50 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:40:39 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 05:25:25 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Those functions below are used to get the path value
 as char pointer of the map directions.
 */
 
-char	*get_north_path(t_data *data)
+char	*ft_get_north_path(t_data *data)
 {
 	t_direction	*tmp;
 
@@ -33,7 +33,7 @@ char	*get_north_path(t_data *data)
 	return (tmp->path);
 }
 
-char	*get_south_path(t_data *data)
+char	*ft_get_south_path(t_data *data)
 {
 	t_direction	*tmp;
 
@@ -49,7 +49,7 @@ char	*get_south_path(t_data *data)
 	return (tmp->path);
 }
 
-char	*get_west_path(t_data *data)
+char	*ft_get_west_path(t_data *data)
 {
 	t_direction	*tmp;
 
@@ -65,7 +65,7 @@ char	*get_west_path(t_data *data)
 	return (tmp->path);
 }
 
-char	*get_east_path(t_data *data)
+char	*ft_get_east_path(t_data *data)
 {
 	t_direction	*tmp;
 

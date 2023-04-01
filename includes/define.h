@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 09:58:50 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 04:17:00 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 06:13:59 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@
 # define SCREEN_WIDTH 1024
 # define SCREEN_HEIGHT 800
 
-# define TEXTURE_WIDTH 42
-# define TEXTURE_HEIGHT 42
+# define TEXTURE_WIDTH 128
+# define TEXTURE_HEIGHT 128
 
 # define W_KEY 119
 # define A_KEY 97
@@ -63,7 +63,11 @@
 # define VERTICAL 0
 # define HORIZONTAL 1
 
-# define WALL '1'
+# define WALL  '1'
+# define NORTH 'N'
+# define EAST  'E'
+# define SOUTH 'S'
+# define WEST  'W'
 
 # include "struct.h"
 # include "function.h"

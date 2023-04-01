@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:38:39 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:44:39 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:38:25 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,20 @@ void	ft_init_screen(t_data *data)
 	data->screen = screen_img;
 }
 
+void	ft_init_player(t_data *data)
+{
+	data->player.x = 0;
+	data->player.y = 0;
+	data->player.orientation = 0;
+	data->player.angle = 0;
+	data->keys_pressed.w_pressed = false;
+	data->keys_pressed.a_pressed = false;
+	data->keys_pressed.s_pressed = false;
+	data->keys_pressed.d_pressed = false;
+	data->keys_pressed.larr_pressed = false;
+	data->keys_pressed.rarr_pressed = false;
+}
+
 /*
 @MARK
 INIT LIST DATA 
@@ -64,16 +78,15 @@ void	ft_init_data(t_data *data)
 	ft_init_textures(data);
 	data->mlx_ptr = mlx_init();
 	if (data->mlx_ptr == NULL)
-		ft_error_free_exit(data, "Could not initialize mlx pointer\n");
+		ft_error_free_exit(data, "Error:\nCould not initialize mlx pointer\n");
 	data->mlx_allocated = true;
 	data->window_ptr = mlx_new_window(data->mlx_ptr, SCREEN_WIDTH, \
 	SCREEN_HEIGHT, "cub3D");
 	if ((data->window_ptr) == NULL)
-		ft_error_free_exit(data, "Could not create the window\n");
+		ft_error_free_exit(data, "Error:\nCould not create the window\n");
 	data->window_allocated = true;
-	data->keys_pressed.w_pressed = false;
-	data->keys_pressed.a_pressed = false;
-	data->keys_pressed.s_pressed = false;
-	data->keys_pressed.d_pressed = false;
+	data->tex_width = TEXTURE_WIDTH;
+	data->tex_height = TEXTURE_HEIGHT;
+	ft_init_player(data);
 	ft_init_screen(data);
 }

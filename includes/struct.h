@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:00:01 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 02:15:46 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:37:37 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ typedef struct s_player
 	double	x;
 	double	y;
 	char	orientation;
+	double	angle;
 }	t_player;
 
 typedef struct s_keys
@@ -81,6 +82,8 @@ typedef struct s_keys
 	bool	s_pressed;
 	bool	a_pressed;
 	bool	d_pressed;
+	bool	larr_pressed;
+	bool	rarr_pressed;
 }	t_keys;
 
 typedef struct s_camera
@@ -137,6 +140,8 @@ typedef struct s_data
 	t_keys				keys_pressed;
 	t_img				screen;
 	t_camera			camera;
+	int					tex_width;
+	int					tex_height;
 }	t_data;
 
 typedef struct s_node

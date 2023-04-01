@@ -6,11 +6,11 @@
 #    By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
-#    Updated: 2023/04/01 04:11:32 by pszleper         ###   ########.fr        #
+#    Updated: 2023/04/01 08:24:33 by pszleper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = gcc -g
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -23,6 +23,7 @@ SRC =		src/error_handler/error_handler.c		\
 			src/get_line/get_next_line_utils.c		\
 			src/getters/getters_direction.c			\
 			src/getters/getters_rgb_path.c			\
+			src/parsing/info_loading.c				\
 			src/lib/ft_atoi.c						\
 			src/lib/ft_isdigit.c					\
 			src/lib/ft_putchar_fd.c					\
@@ -37,6 +38,7 @@ SRC =		src/error_handler/error_handler.c		\
 			src/lib/ft_strncmp.c					\
 			src/lib/ft_strnstr.c					\
 			src/lib/ft_strrchr.c					\
+			src/lib/ft_split_str.c					\
 			src/lst_management/add_lst.c			\
 			src/lst_management/create_lst.c			\
 			src/lst_management/init_lst.c			\
@@ -58,6 +60,7 @@ SRC =		src/error_handler/error_handler.c		\
 			src/rendering/render.c					\
 			src/player_movements.c					\
 			src/input_handling.c					\
+			src/init_player_view.c					\
 			src/main.c
 
 OBJECTS = $(SRC:.c=.o)

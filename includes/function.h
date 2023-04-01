@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 04:16:26 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 08:20:41 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,19 @@ void		invalid_file(t_data *data);
 void		invalid_value(t_data *data);
 int			error_handler(t_data *data, int error);
 // getters
-char		*get_north_path(t_data *data);
-char		*get_south_path(t_data *data);
-char		*get_west_path(t_data *data);
-char		*get_east_path(t_data *data);
-char		*get_floor_path(t_data *data);
-char		*get_cell_path(t_data *data);
+char		*ft_get_north_path(t_data *data);
+char		*ft_get_south_path(t_data *data);
+char		*ft_get_west_path(t_data *data);
+char		*ft_get_east_path(t_data *data);
+char		*ft_get_floor_path(t_data *data);
+char		*ft_get_ceil_path(t_data *data);
+void		ft_load_player_orientation(t_data *data);
+void		ft_init_player_view(t_data *data);
+//info loading
+void		ft_load_textures(t_data *data);
+void		ft_load_player_position(t_data *data);
+void		ft_load_player_orientation(t_data *data);
+void		ft_load_floor_ceiling(t_data *data);
 // input_handling
 int			ft_handle_keypress(int key, t_data *data);
 int			ft_handle_keyrelease(int key, t_data *data);
@@ -106,6 +113,8 @@ void		ft_init_raycaster(t_data *data, t_raycaster *rayc, int x);
 void		ft_init_rays(t_data *data, t_raycaster *rayc);
 void		ft_distance_to_wall(char **map, t_raycaster *rayc);
 void		ft_get_wall_height(t_raycaster *rayc);
-void		ft_get_wall_pixel(t_data *this, t_raycaster *rayc);
+void		ft_get_wall_pixel(t_data *data, t_raycaster *rayc);
+
+char	**ft_split_str(char const *s, char c);
 
 #endif
