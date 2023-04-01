@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   function.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 08:20:41 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:42:27 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char		*get_next_line(int fd);
 void		free_str(char *str);
 // LST MANAGEMENT
 void		ft_init_data(t_data *data);
+void ft_init_mxl(t_data *data);
 t_node		*get_last_node(t_node *node);
 int			add_node_params(t_data **data, char *line);
 int			add_node_colors(t_data **data, char *name, char *rgb);

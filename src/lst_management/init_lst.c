@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_lst.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:38:39 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 21:01:22 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:45:27 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,9 @@ INIT LIST DATA
 This functions is use to initialize the head of
 any linked list store in the struct data
 */
-void	ft_init_data(t_data *data)
+
+void ft_init_mxl(t_data *data)
 {
-	data->garbage_ctr = NULL;
-	data->map = NULL;
-	data->colors = NULL;
-	data->direction = NULL;
-	data->params = NULL;
-	ft_init_textures(data);
 	data->mlx_ptr = mlx_init();
 	if (data->mlx_ptr == NULL)
 		ft_error_free_exit(data, "Error:\nCould not initialize mlx pointer\n");
@@ -85,7 +80,16 @@ void	ft_init_data(t_data *data)
 	if ((data->window_ptr) == NULL)
 		ft_error_free_exit(data, "Error:\nCould not create the window\n");
 	data->window_allocated = true;
-	data->tex_size = TEXTURE_SIZE;
+}
+
+void	ft_init_data(t_data *data)
+{
+	data->garbage_ctr = NULL;
+	data->map = NULL;
+	data->colors = NULL;
+	data->direction = NULL;
+	data->params = NULL;
+	ft_init_textures(data);
 	ft_init_player(data);
 	ft_init_screen(data);
 }

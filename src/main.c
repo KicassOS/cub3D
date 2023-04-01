@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:34:29 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 21:03:20 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:42:52 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_init_game(t_data *data, char **av)
 	if (get_file(data, av[1]) != SUCCESS)
 		error_handler(data, FAILURE);
 	get_map(data);
+	ft_init_mxl(data);
 	ft_load_textures(data);
 	ft_load_floor_ceiling(data);
 	ft_load_player_position(data);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   info_loading.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 05:41:51 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/01 21:10:35 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 21:44:07 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,15 @@ void	ft_load_player_orientation(t_data *data)
 	j = 0;
 	while (data->map[i])
 	{
+		j = 0;
 		while (data->map[i][j])
 		{
-			if (is_position((data->map[i][j])))
+			if (is_position((data->map[i][j])) == SUCCESS)
 				data->player.orientation = data->map[i][j];
 			j++;
 		}
 		i++;
 	}
-		printf("DELETE THESE 2 PRINTF\n");
-	printf("orientation: %c\n", data->player.orientation);
 }
 
 void	ft_load_player_position(t_data *data)
@@ -46,9 +45,10 @@ void	ft_load_player_position(t_data *data)
 	j = 0;
 	while (data->map[i])
 	{
+		j = 0;
 		while (data->map[i][j])
 		{
-			if (is_position(data->map[i][j]))
+			if (is_position(data->map[i][j]) == SUCCESS)
 			{
 				data->player.x = (double)j + 0.5;
 				data->player.y = (double)i + 0.5;
@@ -57,8 +57,6 @@ void	ft_load_player_position(t_data *data)
 		}
 		i++;
 	}
-		printf("DELETE THESE 2 PRINTF\n");
-	printf("position: x = %f; y = %f\n", data->player.x, data->player.y);
 }
 
 void	ft_load_tex(t_img *img, char *path, int *size, t_data *data)
