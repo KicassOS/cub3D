@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_file_extension.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 06:22:17 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/28 06:58:13 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 03:44:58 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 /*
   This function checks if the filename is valid, meaning it has at least
   one character before the . and the extension is .cub

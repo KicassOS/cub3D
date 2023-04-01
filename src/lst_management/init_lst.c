@@ -6,11 +6,11 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:38:39 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/29 09:45:08 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 03:44:39 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 void	ft_init_textures(t_data *data)
 {
@@ -66,7 +66,8 @@ void	ft_init_data(t_data *data)
 	if (data->mlx_ptr == NULL)
 		ft_error_free_exit(data, "Could not initialize mlx pointer\n");
 	data->mlx_allocated = true;
-	data->window_ptr = mlx_new_window(data->mlx_ptr, SCREEN_WIDTH, SCREEN_HEIGHT, "cub3D");
+	data->window_ptr = mlx_new_window(data->mlx_ptr, SCREEN_WIDTH, \
+	SCREEN_HEIGHT, "cub3D");
 	if ((data->window_ptr) == NULL)
 		ft_error_free_exit(data, "Could not create the window\n");
 	data->window_allocated = true;

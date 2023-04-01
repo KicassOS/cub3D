@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_rgb.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:57:16 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:44:39 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:45:08 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 int	check_empty_line(char *line)
 {

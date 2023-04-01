@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   getters_direction.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 15:32:50 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:53:58 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:40:39 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 /*
 @MARK
 Those functions below are used to get the path value

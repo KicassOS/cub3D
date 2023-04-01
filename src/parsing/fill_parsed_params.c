@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fill_parsed_params.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 15:26:51 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:46:12 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:44:46 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 static int	sort_and_add_params(t_data *data)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_maps_utilspp.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:48:16 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 18:58:53 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:45:06 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 void	check_map_cell(t_data *data, char **map, unsigned int index, int j)
 {

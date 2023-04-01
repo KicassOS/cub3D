@@ -6,13 +6,13 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:34:29 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/29 08:32:29 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 04:19:44 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/define.h"
 
-void	init_cub3D(t_data *data, int ac, char **av)
+void	ft_init_game(t_data *data, char **av)
 {
 	ft_init_data(data);
 	if (get_file(data, av[1]) != SUCCESS)
@@ -36,7 +36,7 @@ void	ft_init_hooks(t_data *data)
 	mlx_hook(data->window_ptr, KeyRelease, KeyReleaseMask, \
 	ft_handle_keyrelease, (void *) data);
 	mlx_hook(data->window_ptr, \
-	DestroyNotify, ButtonPressMask, ft_free_exit, (void *) data);
+	DestroyNotify, ButtonPressMask, ft_close_hook, (void *) data);
 	mlx_loop_hook(data->mlx_ptr, ft_game_loop, data);
 }
 
@@ -46,10 +46,11 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		printf("Error:\ncub3D expects one argument: the map to load\n");
+		ft_putstr_fd("Error:\ncub3D expects one argument: the map to load\n"\
+		, STDERR_FILENO);
 		return (EXIT_FAILURE);
 	}
-	init_cub3D(&data, ac, av);
+	ft_init_game(&data, av);
 	ft_init_hooks(&data);
 	mlx_loop(data.mlx_ptr);
 	ft_free(&data);

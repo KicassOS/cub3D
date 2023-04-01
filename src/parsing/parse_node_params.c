@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_node_params.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 12:46:58 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:39:08 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:45:07 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 static int	check_legit_path(char *path)
 {

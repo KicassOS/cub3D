@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 05:49:14 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/31 14:48:21 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 03:49:22 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_img	ft_new_screen(void *mlx_ptr)
 	t_img	new_screen;
 
 	new_screen.ptr = mlx_new_image(mlx_ptr, SCREEN_WIDTH, SCREEN_HEIGHT);
-	new_screen.addr = mlx_get_data_addr(new_screen.ptr, &new_screen.bpp,
-			&new_screen.line_len, &new_screen.endianness);
+	new_screen.address = mlx_get_data_addr(new_screen.ptr, &new_screen.bpp,
+			&new_screen.line_length, &new_screen.endianness);
 	return (new_screen);
 }
 
@@ -29,7 +29,7 @@ static void	ft_draw_vertical_strip(t_data *data, t_raycaster *rayc, int x)
 	y = -1;
 	while (++y < rayc->draw_start)
 	{
-		ft_pixel_put(&data->canvas, x, y,
+		ft_pixel_put(&data->screen, x, y,
 			ft_create_trgb(256, data->textures.sky_colors[0],
 				data->textures.sky_colors[1], data->textures.sky_colors[2]));
 	}
@@ -38,13 +38,13 @@ static void	ft_draw_vertical_strip(t_data *data, t_raycaster *rayc, int x)
 	{
 		rayc->tex_y = (int)rayc->tex_pos & (TEXTURE_HEIGHT - 1);
 		rayc->tex_pos += rayc->step;
-		ft_pixel_put(&data->canvas, x, y, ft_get_side_pixel(data, rayc));
+		ft_pixel_put(&data->screen, x, y, ft_get_side_pixel(data, rayc));
 		y += 1;
 	}
 	y = rayc->draw_end;
 	while (y < SCREEN_HEIGHT)
 	{
-		ft_pixel_put(&data->canvas, x, y,
+		ft_pixel_put(&data->screen, x, y,
 			ft_create_trgb(256, data->textures.floor_colors[0], \
 			data->textures.floor_colors[1], data->textures.floor_colors[2]));
 		y += 1;
@@ -56,7 +56,7 @@ void	ft_render_frame(t_data *data)
 	int			x;
 	t_raycaster	rayc;
 
-	data->canvas = ft_new_screen(data->mlx_ptr);
+	data->screen = ft_new_screen(data->mlx_ptr);
 	x = 0;
 	while (x < SCREEN_WIDTH)
 	{
@@ -68,7 +68,7 @@ void	ft_render_frame(t_data *data)
 		ft_draw_vertical_strip(data, &rayc, x);
 		x += 1;
 	}
-	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr,
-		data->canvas.ptr, 0, 0);
+	mlx_clear_window(data->mlx_ptr, data->window_ptr);
+	mlx_put_image_to_window(data->mlx_ptr, data->window_ptr,
+		data->screen.ptr, 0, 0);
 }

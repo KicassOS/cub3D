@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   getters_rgb_path.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 15:32:53 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:54:44 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:42:53 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 /*
 @MARK

@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 09:58:50 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/29 08:09:07 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 04:17:00 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@
 # include <stdbool.h>
 # include <X11/X.h>
 # include <X11/keysym.h>
-# include <unistd.h>
-# include "struct.h"
-# include "function.h"
-# include "../src/lib/libft.h"
+# include <math.h>
+# include <stdint.h>
+# include "mlx.h"
 
 # define FAILURE -1
 # define MALLOC_ERROR -42
@@ -51,6 +50,7 @@
 # define A_KEY 97
 # define S_KEY 115
 # define D_KEY 100
+# define ESC_KEY 65307
 
 # define Q_KEY 113
 # define ESC_KEY 65307
@@ -64,5 +64,9 @@
 # define HORIZONTAL 1
 
 # define WALL '1'
+
+# include "struct.h"
+# include "function.h"
+# include "libft.h"
 
 #endif

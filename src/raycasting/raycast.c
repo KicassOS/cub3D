@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 04:34:19 by pszleper          #+#    #+#             */
-/*   Updated: 2023/03/30 21:08:29 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 03:47:47 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_init_raycaster(t_data *data, t_raycaster *rayc, int x)
 {
-	rc->camera_x = 2 * x / (double)SCREEN_WIDTH - 1;
-	rc->raydir_x = data->camera.dir_x + data->camera.plane_x * rc->camera_x;
-	rc->raydir_y = data->camera.dir_y + data->camera.plane_y * rc->camera_x;
-	rc->map_x = (int)data->player.x;
-	rc->map_y = (int)data->player.y;
-	rc->deltadist_x = fabs(1 / rc->raydir_x);
-	rc->deltadist_y = fabs(1 / rc->raydir_y);
-	rc->hit = false;
+	rayc->camera_x = 2 * x / (double)SCREEN_WIDTH - 1;
+	rayc->raydir_x = data->camera.dir_x + data->camera.plane_x * rayc->camera_x;
+	rayc->raydir_y = data->camera.dir_y + data->camera.plane_y * rayc->camera_x;
+	rayc->map_x = (int)data->player.x;
+	rayc->map_y = (int)data->player.y;
+	rayc->deltadist_x = fabs(1 / rayc->raydir_x);
+	rayc->deltadist_y = fabs(1 / rayc->raydir_y);
+	rayc->hit = false;
 }
 
 void	ft_init_rays(t_data *data, t_raycaster *rayc)

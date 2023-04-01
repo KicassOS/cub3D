@@ -6,7 +6,7 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:00:01 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/29 09:38:46 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 02:15:46 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,27 @@ typedef struct s_garbage
 {
 	struct s_garbage	*next;
 	void				*addr;
-}						t_garbage;
+}	t_garbage;
 
 typedef struct s_colors
 {
 	struct s_colors		*next;
 	char				*name;
 	char				*rgb;
-}						t_colors;
+}	t_colors;
 
 typedef struct s_direction
 {
 	struct s_direction	*next;
 	char				*name;
 	char				*path;
-}						t_direction;
+}	t_direction;
 
 typedef struct s_params
 {
 	struct s_params		*next;
 	char				*content;
-}						t_params;
+}	t_params;
 
 typedef struct s_require_params
 {
@@ -47,7 +47,7 @@ typedef struct s_require_params
 	int					east;
 	int					floor;
 	int					cell;
-}						t_require_params;
+}	t_require_params;
 
 typedef struct s_img
 {
@@ -137,11 +137,11 @@ typedef struct s_data
 	t_keys				keys_pressed;
 	t_img				screen;
 	t_camera			camera;
-}						t_data;
+}	t_data;
 
 typedef struct s_node
 {
 	struct s_node		*next;
-}						t_node;
+}	t_node;
 
 #endif

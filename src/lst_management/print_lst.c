@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_lst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 11:16:38 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:36:28 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 04:13:50 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 void	print_params_content(t_params *node)
 {

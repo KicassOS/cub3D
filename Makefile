@@ -1,124 +1,87 @@
-# Generated with GenMake
-# Arthur-TRT - https://github.com/arthur-trt/genMake
-# genmake v1.1.6
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
+#    Updated: 2023/04/01 04:11:32 by pszleper         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-#Compiler and Linker
-CC					:= clang
-CXX					:= c++
-ifeq ($(shell uname -s),Darwin)
-	CC				:= gcc
-	CXX				:= g++
-endif
+CC = gcc
 
-#The Target Binary Program
-TARGET				:= cub3D
-TARGET_BONUS		:= cub3D-bonus
+FLAGS = -Wall -Wextra -Werror
 
-BUILD				:= release
+NAME = cub3D
 
-include sources.mk
+SRC =		src/error_handler/error_handler.c		\
+			src/error_handler/error_handler_utils.c	\
+			src/garbage_ctr/garbage_collector.c		\
+			src/get_line/get_next_line.c			\
+			src/get_line/get_next_line_utils.c		\
+			src/getters/getters_direction.c			\
+			src/getters/getters_rgb_path.c			\
+			src/lib/ft_atoi.c						\
+			src/lib/ft_isdigit.c					\
+			src/lib/ft_putchar_fd.c					\
+			src/lib/ft_putnbr_fd.c					\
+			src/lib/ft_putstr_fd.c					\
+			src/lib/ft_split.c						\
+			src/lib/ft_strchr.c						\
+			src/lib/ft_strdup.c						\
+			src/lib/ft_striteri.c					\
+			src/lib/ft_strjoin.c					\
+			src/lib/ft_strlen.c						\
+			src/lib/ft_strncmp.c					\
+			src/lib/ft_strnstr.c					\
+			src/lib/ft_strrchr.c					\
+			src/lst_management/add_lst.c			\
+			src/lst_management/create_lst.c			\
+			src/lst_management/init_lst.c			\
+			src/lst_management/print_lst.c			\
+			src/parsing/fill_params.c				\
+			src/parsing/fill_parsed_params.c		\
+			src/parsing/get_file.c					\
+			src/parsing/get_file_extension.c		\
+			src/parsing/get_file_utils.c			\
+			src/parsing/get_map.c					\
+			src/parsing/get_maps_utilspp.c			\
+			src/parsing/get_map_utils.c				\
+			src/parsing/parse_node_params.c			\
+			src/parsing/parse_requirement_params.c	\
+			src/parsing/parse_rgb.c					\
+			src/parsing/parsing_utils.c				\
+			src/raycasting/raycast.c				\
+			src/rendering/mlx_utils.c				\
+			src/rendering/render.c					\
+			src/player_movements.c					\
+			src/input_handling.c					\
+			src/main.c
 
-#The Directories, Source, Includes, Objects, Binary and Resources
-SRCDIR				:= src
-INCDIR				:= includes
-BUILDDIR			:= obj
-TARGETDIR			:= .
-SRCEXT				:= c
-DEPEXT				:= d
-OBJEXT				:= o
+OBJECTS = $(SRC:.c=.o)
 
-OBJECTS				:= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
-OBJECTS_BONUS		:= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES_BONUS:.$(SRCEXT)=.$(OBJEXT)))
+HEADER = includes/define.h
 
-#Flags, Libraries and Includes
-cflags.release		:= -g3 -gdwarf-4 -Wall -Werror -Wextra
-cflags.valgrind		:= -Wall -Werror -Wextra -DDEBUG -ggdb
-cflags.debug		:= -Wall -Werror -Wextra -DDEBUG -ggdb -fsanitize=address -fno-omit-frame-pointer
-CFLAGS				:= $(cflags.$(BUILD))
-CPPFLAGS			:= $(cflags.$(BUILD)) -std=c++98
+all: libmlx_Linux.a $(NAME)
 
-lib.release			:= 
-lib.valgrind		:= $(lib.release)
-lib.debug			:= $(lib.release) -fsanitize=address -fno-omit-frame-pointer
-LIB					:= $(lib.$(BUILD))
+$(NAME): $(OBJECTS)
+	$(CC) $(OBJECTS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
-INC					:= -I$(INCDIR) -I/usr/local/include
-INCDEP				:= -I$(INCDIR)
+%.o: %.c
+	$(CC) $(FLAGS) -c -I/usr/include -Iincludes -Imlx_linux -lm $< -o $@
 
-# Colors
-C_RESET				:= \033[0m
-C_PENDING			:= \033[0;36m
-C_SUCCESS			:= \033[0;32m
+libmlx_Linux.a:
+	make -C mlx_linux
+	cp mlx_linux/libmlx_Linux.a .
 
-# Multi platforms
-ECHO				:= echo
-
-# Escape sequences (ANSI/VT100)
-ES_ERASE			:= "\033[1A\033[2K\033[1A"
-ERASE				:= $(ECHO) $(ES_ERASE)
-
-GREP				:= grep --color=auto --exclude-dir=.git
-NORMINETTE			:= norminette `ls`
-
-# Default Make
-all: $(TARGETDIR)/$(TARGET)
-	@$(ERASE)
-	@$(ECHO) "$(TARGET)\t\t[$(C_SUCCESS)✅$(C_RESET)]"
-	@$(ECHO) "$(C_SUCCESS)All done, compilation successful! 👌 $(C_RESET)"
-
-# Bonus rule
-bonus: CFLAGS += -DBONUS
-bonus: $(TARGETDIR)/$(TARGET_BONUS)
-	@$(ERASE)
-	@$(ECHO) "$(TARGET)\t\t[$(C_SUCCESS)✅$(C_RESET)]"
-	@$(ECHO) "$(C_SUCCESS)All done, compilation successful with bonus! 👌 $(C_RESET)"
-
-# Remake
-re: fclean all
-
-# Clean only Objects
 clean:
-	@$(RM) -f *.d *.o
-	@$(RM) -rf $(BUILDDIR)
+	find . -name "*.o" -type f -delete
+	find . -name "*.h.gch" -type f -delete
 
-
-# Full Clean, Objects and Binaries
 fclean: clean
-	@$(RM) -rf $(TARGET)
+	rm -f libmlx_Linux.a
+	rm -f $(NAME)
 
-# Pull in dependency info for *existing* .o files
--include $(OBJECTS:.$(OBJEXT)=.$(DEPEXT))
-
-# Link
-$(TARGETDIR)/$(TARGET): $(OBJECTS)
-	@mkdir -p $(TARGETDIR)
-	$(CC) -o $(TARGETDIR)/$(TARGET) $^ $(LIB)
-
-# Link Bonus
-$(TARGETDIR)/$(TARGET_BONUS): $(OBJECTS_BONUS)
-	@mkdir -p $(TARGETDIR)
-	$(CC) -o $(TARGETDIR)/$(TARGET) $^ $(LIB)
-
-$(BUILDIR):
-	@mkdir -p $@
-
-# Compile
-$(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
-	@mkdir -p $(dir $@)
-	@$(ECHO) "$(TARGET)\t\t[$(C_PENDING)⏳$(C_RESET)]"
-	$(CC) $(CFLAGS) $(INC) -c -o $@ $<
-	@$(CC) $(CFLAGS) $(INCDEP) -MM $(SRCDIR)/$*.$(SRCEXT) > $(BUILDDIR)/$*.$(DEPEXT)
-	@$(ERASE)
-	@$(ERASE)
-	@cp -f $(BUILDDIR)/$*.$(DEPEXT) $(BUILDDIR)/$*.$(DEPEXT).tmp
-	@sed -e 's|.*:|$(BUILDDIR)/$*.$(OBJEXT):|' < $(BUILDDIR)/$*.$(DEPEXT).tmp > $(BUILDDIR)/$*.$(DEPEXT)
-	@sed -e 's/.*://' -e 's/\\$$//' < $(BUILDDIR)/$*.$(DEPEXT).tmp | fmt -1 | sed -e 's/^ *//' -e 's/$$/:/' >> $(BUILDDIR)/$*.$(DEPEXT)
-	@rm -f $(BUILDDIR)/$*.$(DEPEXT).tmp
-
-
-
-norm:
-	@$(NORMINETTE) | $(GREP) -v "Not a valid file" | $(GREP) "Error\|Warning" -B 1 || true
-
-# Non-File Targets
-.PHONY: all re clean fclean norm bonus
+re: fclean all

@@ -6,11 +6,11 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:16:08 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/29 05:57:11 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 03:41:32 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 /*
 @MARK
 This function is almost called everywhere in the program, it helps to

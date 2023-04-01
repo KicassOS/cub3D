@@ -6,14 +6,13 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/30 20:58:59 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 04:16:26 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FUNCTION_H
 # define FUNCTION_H
 
-# include "define.h"
 // GET_NEXT_VALID
 char		*ft_strjoin_line(char *s1, char *s2);
 char		*get_next_line(int fd);
@@ -74,7 +73,7 @@ int			check_is_space(t_data *data, char **map, unsigned int index, int j);
 void		free_and_null(void *var);
 void		ft_free(t_data *data);
 void		ft_free_exit(t_data *data);
-void		ft_error_free_exit(t_data *data);
+void		ft_error_free_exit(t_data *data, char *error_message);
 void		*ft_malloc(t_data *data, int len);
 int			add_addr_to_garbage(t_data **data, void *ptr);
 // ERROR HANDLER
@@ -95,11 +94,13 @@ char		*get_cell_path(t_data *data);
 int			ft_handle_keypress(int key, t_data *data);
 int			ft_handle_keyrelease(int key, t_data *data);
 void		ft_move_player(t_data *data);
+int			ft_close_hook(void *data);
 // rendering
 int			ft_create_trgb(int t, int r, int g, int b);
 void		ft_pixel_put(t_img *img, int x, int y, unsigned int color);
 int			ft_extract_pixel(t_img *img, int x, int y);
-u_int32_t	ft_get_side_pixel(t_data *data, t_raycaster *rayc);
+uint32_t	ft_get_side_pixel(t_data *data, t_raycaster *rayc);
+void		ft_render_frame(t_data *data);
 // raycasting
 void		ft_init_raycaster(t_data *data, t_raycaster *rayc, int x);
 void		ft_init_rays(t_data *data, t_raycaster *rayc);

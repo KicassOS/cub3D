@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   create_lst.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:53:44 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 16:38:48 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:44:37 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 t_node	*lst_new_params(t_data *data, char *line)
 {

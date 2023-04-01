@@ -6,11 +6,11 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 15:35:51 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/29 05:57:25 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 03:41:44 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 void	malloc_error(t_data *data)
 {

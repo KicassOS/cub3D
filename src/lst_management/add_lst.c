@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   add_lst.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:08:30 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:35:05 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:44:33 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 t_node	*get_last_node(t_node *node)
 {

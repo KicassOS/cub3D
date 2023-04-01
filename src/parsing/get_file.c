@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_file.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:25:14 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:59:47 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:45:04 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 int	get_file(t_data *data, char *file)
 {

@@ -6,11 +6,11 @@
 /*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:45:02 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/29 07:14:57 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 03:42:00 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 /*
 @MARK

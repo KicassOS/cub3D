@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fill_params.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:15:19 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/03/26 17:46:23 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/01 03:44:41 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/define.h"
+#include "../../includes/define.h"
 
 int	is_not_params(t_data *data, char *line)
 {
