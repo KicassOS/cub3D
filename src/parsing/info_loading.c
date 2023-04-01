@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   info_loading.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 05:41:51 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/01 08:17:58 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 18:32:03 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_load_player_orientation(t_data *data)
 		}
 		i++;
 	}
+	printf("orientation: %c\n", data->player.orientation);
 }
 
 void	ft_load_player_position(t_data *data)
@@ -55,6 +56,7 @@ void	ft_load_player_position(t_data *data)
 		}
 		i++;
 	}
+	printf("position: x = %f; y = %f\n", data->player.x, data->player.y);
 }
 
 void	ft_load_textures(t_data *data)

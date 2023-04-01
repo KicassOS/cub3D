@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:34:29 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 08:40:56 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/01 18:23:55 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_init_game(t_data *data, char **av)
 int	ft_game_loop(t_data *data)
 {
 	ft_move_player(data);
-	ft_rotate_player(data);
+	// ft_rotate_player(data);
 	ft_render_frame(data);
 	mlx_destroy_image(data->mlx_ptr, data->screen.ptr);
 	data->screen.ptr = NULL;
