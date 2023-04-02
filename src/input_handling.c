@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 06:11:34 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/01 08:39:42 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:56:45 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	ft_handle_keypress(int key, t_data *data)
 {
-	if (key == ESC_KEY)
+	if (key == XK_Escape)
 		ft_free_exit(data);
-	if (key == W_KEY)
+	if (key == XK_W || key == XK_w)
 		data->keys_pressed.w_pressed = true;
-	if (key == A_KEY)
+	if (key == XK_A || key == XK_a)
 		data->keys_pressed.a_pressed = true;
-	if (key == S_KEY)
+	if (key == XK_S || key == XK_s)
 		data->keys_pressed.s_pressed = true;
-	if (key == D_KEY)
+	if (key == XK_D || key == XK_d)
 		data->keys_pressed.d_pressed = true;
 	if (key == XK_Left)
 		data->keys_pressed.larr_pressed = true;

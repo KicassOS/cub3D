@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 09:58:50 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 21:01:32 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:57:27 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,6 @@
 # define SCREEN_HEIGHT 800
 
 # define TEXTURE_SIZE 128
-
-# define W_KEY 119
-# define A_KEY 97
-# define S_KEY 115
-# define D_KEY 100
-# define ESC_KEY 65307
-
-# define Q_KEY 113
-# define ESC_KEY 65307
-
-# define UP_ARROW 65362
-# define LEFT_ARROW 65361
-# define DOWN_ARROW 65364
-# define RIGHT_ARROW 65363
 
 # define VERTICAL 0
 # define HORIZONTAL 1
