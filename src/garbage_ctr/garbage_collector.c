@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   garbage_collector.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:45:02 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:42:00 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/02 17:33:13 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	ft_free(t_data *data)
 		lst = tmp;
 	}
 	data->garbage_ctr = NULL;
+	ft_free_images(data);
 	if (data->window_allocated == true)
 	{
 		mlx_destroy_window(data->mlx_ptr, data->window_ptr);
@@ -70,7 +71,6 @@ void	ft_free(t_data *data)
 	}
 	if (data->mlx_allocated == true)
 		free(data->mlx_ptr);
-	ft_free_images(data);
 }
 
 void	ft_free_exit(t_data *data)
