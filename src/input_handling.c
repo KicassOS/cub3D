@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 06:11:34 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/02 19:56:45 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/02 20:02:12 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ int	ft_handle_keypress(int key, t_data *data)
 
 int	ft_handle_keyrelease(int key, t_data *data)
 {
-	if (key == W_KEY)
+	if (key == XK_W || key == XK_w)
 		data->keys_pressed.w_pressed = false;
-	if (key == A_KEY)
+	if (key == XK_A || key == XK_a)
 		data->keys_pressed.a_pressed = false;
-	if (key == S_KEY)
+	if (key == XK_S || key == XK_s)
 		data->keys_pressed.s_pressed = false;
-	if (key == D_KEY)
+	if (key == XK_D || key == XK_d)
 		data->keys_pressed.d_pressed = false;
 	if (key == XK_Left)
 		data->keys_pressed.larr_pressed = false;
