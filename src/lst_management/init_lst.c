@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_lst.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:38:39 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/03 08:43:58 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 00:54:52 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ void	ft_init_data(t_data *data)
 	data->colors = NULL;
 	data->direction = NULL;
 	data->params = NULL;
+	data->mlx_allocated = false;
+	data->window_allocated = false;
 	ft_init_textures(data);
 	ft_init_player(data);
 	ft_init_screen(data);
