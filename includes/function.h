@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/03 08:15:04 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 08:44:58 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char		*get_next_line(int fd);
 void		free_str(char *str);
 // LST MANAGEMENT
 void		ft_init_data(t_data *data);
-void ft_init_mxl(t_data *data);
+void		ft_init_mxl(t_data *data);
 t_node		*get_last_node(t_node *node);
 int			add_node_params(t_data **data, char *line);
 int			add_node_colors(t_data **data, char *name, char *rgb);
@@ -117,6 +117,6 @@ void		ft_distance_to_wall(char **map, t_raycaster *rayc);
 void		ft_get_wall_height(t_raycaster *rayc);
 void		ft_get_wall_pixel(t_data *data, t_raycaster *rayc);
 
-char	**ft_split_str(char const *s, char c);
+char		**ft_split_str(char const *s, char c);
 
 #endif

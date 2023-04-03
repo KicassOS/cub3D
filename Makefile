@@ -6,11 +6,11 @@
 #    By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
-#    Updated: 2023/04/03 08:15:20 by pszleper         ###   ########.fr        #
+#    Updated: 2023/04/03 08:41:01 by pszleper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc -g
+CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 

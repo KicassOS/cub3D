@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 05:41:51 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/03 06:20:54 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 08:41:37 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,4 @@ void	ft_load_floor_ceiling(t_data *data)
 	while (++i < 3)
 		free(sky_rgb[i]);
 	free(sky_rgb);
-	
-	for (int j = 0; j < 3; j++)
-		printf("skycolors[%d] = %d, floor_colors[%d] = %d\n", j,data->textures.sky_colors[j], j, data->textures.floor_colors[j]);
 }

@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:34:29 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/03 08:37:49 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 08:45:31 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,8 @@ void	ft_init_hooks(t_data *data)
 
 int	main(int ac, char **av)
 {
-	//CHECK NORMINETTE, REMOVE -G, REMOVE EXCESS PRINTFS
 	t_data	data;
-printf("REMOVE -g flag from makefile after project is done, dont delete this until then\n");
+
 	if (ac != 2)
 	{
 		ft_putstr_fd("Error\ncub3D expects one argument: the map to load\n"\

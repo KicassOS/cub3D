@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:38:39 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/03 08:36:00 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 08:43:58 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ This functions is use to initialize the head of
 any linked list store in the struct data
 */
 
-void ft_init_mxl(t_data *data)
+void	ft_init_mxl(t_data *data)
 {
 	data->mlx_ptr = mlx_init();
 	if (data->mlx_ptr == NULL)
