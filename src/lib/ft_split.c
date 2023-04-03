@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/04 10:35:59 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:44:05 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 23:23:05 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static char	*ft_dup(t_data *data, char const *str, char sep)
 		len++;
 	cpy = (char *)ft_malloc(data, sizeof(char) * (len + 1));
 	if (!cpy)
-		return (NULL);
+		error_handler(data, MALLOC_ERROR);
 	while (str[i] && !ft_ischarset(str[i], sep))
 	{
 		cpy[i] = str[i];
@@ -74,7 +74,7 @@ char	**ft_split(t_data *data, char const *s, char c)
 	split = (char **)ft_malloc(data, sizeof(char *) * (ft_countwords(s, c)
 				+ 1));
 	if (!split)
-		return (NULL);
+		error_handler(data, MALLOC_ERROR);
 	while (s[i] && ft_ischarset(s[i], c))
 		i++;
 	while (s[i])
