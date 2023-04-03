@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:48:11 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/03 23:27:32 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 06:20:26 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 int	valid_arg(char *arg)
 {
-	if (!arg)
-	{
-		ft_putstr_fd("Error\narg is NULL\n", 2);
-		exit(FAILURE);
-	}
 	if (!(ft_strchr(arg, '.')))
 	{
 		ft_putstr_fd("Error\nFile name must be named as: <filename>.cub\n", \
@@ -72,14 +67,6 @@ char	*get_right_line(t_data *data, char *file_line, char *tmp, \
 	return (file_line);
 }
 
-void	ft_init_cub_to_str(char *file, int *fd, int *detect, t_data *data)
-{
-	*detect = 0;
-	*fd = open(file, O_RDONLY);
-	if (*fd < 0)
-		error_handler(data, INVALID_FILE);
-}
-
 char	*cub_to_str(t_data *data, char *file)
 {
 	char	*file_store;
@@ -87,17 +74,34 @@ char	*cub_to_str(t_data *data, char *file)
 	int		detect;
 	int		fd;
 
-	ft_init_cub_to_str(file, &fd, &detect, data);
+	tmp = "ok";
+	detect = 0;
 	file_store = NULL;
-	tmp = get_next_line(fd);
-	while ((tmp))
+	if (!file)
+		return (NULL);
+	if ((fd = open(file, O_RDONLY)) < 0)
+		error_handler(data, INVALID_FILE);
+	while ((tmp = get_next_line(fd)))
 	{
-		file_store = get_right_line(data, file_store, tmp, &detect);
-		free_str(tmp);
-		tmp = get_next_line(fd);
+		if (tmp)
+		{
+			file_store = get_right_line(data, file_store, tmp, &detect);
+			if (!file_store)
+				break ;
+			free_str(tmp);
+		}
 	}
-	free_str(tmp);
 	get_next_line(-1);
 	close(fd);
 	return (file_store);
+}
+
+int	file_to_array(t_data *data, char *file_store)
+{
+	if (!(file_store))
+		return (INVALID_VALUE);
+	data->file_arr = ft_split(data, file_store, '\n');
+	if (!data->file_arr)
+		return (MALLOC_ERROR);
+	return (SUCCESS);
 }
