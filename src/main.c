@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:34:29 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 21:42:52 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/03 06:19:30 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int ac, char **av)
 printf("REMOVE -g flag from makefile after project is done, dont delete this until then\n");
 	if (ac != 2)
 	{
-		ft_putstr_fd("Error:\ncub3D expects one argument: the map to load\n"\
+		ft_putstr_fd("Error\ncub3D expects one argument: the map to load\n"\
 		, STDERR_FILENO);
 		return (EXIT_FAILURE);
 	}

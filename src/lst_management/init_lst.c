@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_lst.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:38:39 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 21:45:27 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/03 06:20:09 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,12 @@ void ft_init_mxl(t_data *data)
 {
 	data->mlx_ptr = mlx_init();
 	if (data->mlx_ptr == NULL)
-		ft_error_free_exit(data, "Error:\nCould not initialize mlx pointer\n");
+		ft_error_free_exit(data, "Error\nCould not initialize mlx pointer\n");
 	data->mlx_allocated = true;
 	data->window_ptr = mlx_new_window(data->mlx_ptr, SCREEN_WIDTH, \
 	SCREEN_HEIGHT, "cub3D");
 	if ((data->window_ptr) == NULL)
-		ft_error_free_exit(data, "Error:\nCould not create the window\n");
+		ft_error_free_exit(data, "Error\nCould not create the window\n");
 	data->window_allocated = true;
 }
 

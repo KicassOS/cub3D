@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:48:11 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:45:03 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 06:20:26 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ int	valid_arg(char *arg)
 {
 	if (!(ft_strchr(arg, '.')))
 	{
-		ft_putstr_fd("Error :\nfile name must be named as: <filename>.cub\n", \
+		ft_putstr_fd("Error\nFile name must be named as: <filename>.cub\n", \
 						2);
 		exit(FAILURE);
 	}
 	if (ft_valid_extension(arg) == false)
 	{
-		ft_putstr_fd("Error :\nfile name must be named as: <filename>.cub\n", \
+		ft_putstr_fd("Error\nFile name must be named as: <filename>.cub\n", \
 						2);
 		exit(FAILURE);
 	}
