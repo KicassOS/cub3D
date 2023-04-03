@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+         #
+#    By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
-#    Updated: 2023/04/03 08:41:01 by pszleper         ###   ########.fr        #
+#    Updated: 2023/04/03 23:28:00 by pszleper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRC =		src/error_handler/error_handler.c		\
 			src/parsing/get_file.c					\
 			src/parsing/get_file_extension.c		\
 			src/parsing/get_file_utils.c			\
+			src/parsing/get_file_utils_2.c			\
 			src/parsing/get_map.c					\
 			src/parsing/get_maps_utilspp.c			\
 			src/parsing/get_map_utils.c				\
