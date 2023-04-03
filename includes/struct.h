@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 10:00:01 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 20:41:41 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 08:18:49 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ typedef struct s_player
 	double	x;
 	double	y;
 	char	orientation;
-	double	angle;
 }	t_player;
 
 typedef struct s_keys

@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:38:39 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/03 06:20:09 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 08:36:00 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	ft_init_player(t_data *data)
 	data->player.x = 0;
 	data->player.y = 0;
 	data->player.orientation = 0;
-	data->player.angle = 0;
 	data->keys_pressed.w_pressed = false;
 	data->keys_pressed.a_pressed = false;
 	data->keys_pressed.s_pressed = false;

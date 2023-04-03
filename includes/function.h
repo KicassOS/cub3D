@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   function.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 21:42:27 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/03 08:15:04 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ void		ft_load_floor_ceiling(t_data *data);
 int			ft_handle_keypress(int key, t_data *data);
 int			ft_handle_keyrelease(int key, t_data *data);
 void		ft_move_player(t_data *data);
+void		ft_rotate_player(t_data *data);
 int			ft_close_hook(void *data);
 // rendering
 int			ft_create_trgb(int t, int r, int g, int b);

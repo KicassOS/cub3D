@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+         #
+#    By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
-#    Updated: 2023/04/01 08:24:33 by pszleper         ###   ########.fr        #
+#    Updated: 2023/04/03 08:15:20 by pszleper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRC =		src/error_handler/error_handler.c		\
 			src/rendering/mlx_utils.c				\
 			src/rendering/render.c					\
 			src/player_movements.c					\
+			src/player_rotation.c					\
 			src/input_handling.c					\
 			src/init_player_view.c					\
 			src/main.c

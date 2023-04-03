@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:34:29 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/03 06:19:30 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/03 08:37:49 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,12 @@ void	ft_init_game(t_data *data, char **av)
 	ft_load_player_position(data);
 	ft_load_player_orientation(data);
 	ft_init_player_view(data);
-	// init the player camera rotation
-	// log the player and map info for testing
 }
 
 int	ft_game_loop(t_data *data)
 {
 	ft_move_player(data);
-	// ft_rotate_player(data);
+	ft_rotate_player(data);
 	ft_render_frame(data);
 	mlx_destroy_image(data->mlx_ptr, data->screen.ptr);
 	data->screen.ptr = NULL;
@@ -51,6 +49,7 @@ void	ft_init_hooks(t_data *data)
 
 int	main(int ac, char **av)
 {
+	//CHECK NORMINETTE, REMOVE -G, REMOVE EXCESS PRINTFS
 	t_data	data;
 printf("REMOVE -g flag from makefile after project is done, dont delete this until then\n");
 	if (ac != 2)
