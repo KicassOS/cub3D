@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   function.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/04 10:41:52 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/04 20:37:22 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // GET_NEXT_VALID
 char		*ft_strjoin_line(t_data *data, char *s1, char *s2);
-char		*get_next_line(t_data *data ,int fd);
+char		*get_next_line(t_data *data, int fd);
 void		free_str(char *str);
 // LST MANAGEMENT
 void		ft_init_data(t_data *data);

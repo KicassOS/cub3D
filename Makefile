@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+         #
+#    By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
-#    Updated: 2023/04/04 10:12:33 by gkitoko          ###   ########.fr        #
+#    Updated: 2023/04/04 20:36:12 by pszleper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRC =		src/error_handler/error_handler.c		\
 			src/parsing/parse_rgb.c					\
 			src/parsing/parsing_utils.c				\
 			src/raycasting/raycast.c				\
+			src/raycasting/raycast_2.c				\
 			src/rendering/mlx_utils.c				\
 			src/rendering/render.c					\
 			src/player_movements.c					\
