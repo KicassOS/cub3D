@@ -1,6 +1,6 @@
 EA  ./ea.xpm
 NO  ./north.xpm
-SO  ./so.xpm
+SO  ./stone_128.xpm
 WE  ./we.xpm
 
 C 055,000,160
