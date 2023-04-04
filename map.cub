@@ -1,7 +1,7 @@
-EA  ./ea.xpm
-NO  ./north.xpm
+EA  ./brick_wall_128.xpm
+NO  ./dark_wood_128.xpm
 SO  ./stone_128.xpm
-WE  ./we.xpm
+WE  ./minec_wood_128.xpm
 
 C 055,000,160
 F 1,1,1
