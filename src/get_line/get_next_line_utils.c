@@ -6,7 +6,7 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 03:18:08 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/04 10:38:38 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/04 21:12:43 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,5 @@ char	*ft_strjoin_line(t_data *data, char *s1, char *s2)
 	while (s2[j])
 		res[k++] = s2[j++];
 	res[k] = '\0';
-	if (s1)
-	{
-		free(s1);
-		s1 = NULL;
-	}
 	return (res);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   info_loading.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 05:41:51 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/03 08:41:37 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 21:30:02 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,9 @@ void	ft_load_floor_ceiling(t_data *data)
 {
 	char	**floor_rgb;
 	char	**sky_rgb;
-	int		i;
 
-	floor_rgb = ft_split_str(ft_get_floor_path(data), ',');
-	sky_rgb = ft_split_str(ft_get_ceil_path(data), ',');
+	floor_rgb = ft_split(data, ft_get_floor_path(data), ',');
+	sky_rgb = ft_split(data, ft_get_ceil_path(data), ',');
 	if (!floor_rgb || !sky_rgb)
 		ft_error_free_exit(data, "Error\nCould not get floor/ceiling path\n");
 	data->textures.sky_colors[0] = ft_atoi(sky_rgb[0]);
@@ -110,12 +109,4 @@ void	ft_load_floor_ceiling(t_data *data)
 	data->textures.floor_colors[0] = ft_atoi(floor_rgb[0]);
 	data->textures.floor_colors[1] = ft_atoi(floor_rgb[1]);
 	data->textures.floor_colors[2] = ft_atoi(floor_rgb[2]);
-	i = -1;
-	while (++i < 3)
-		free(floor_rgb[i]);
-	free(floor_rgb);
-	i = -1;
-	while (++i < 3)
-		free(sky_rgb[i]);
-	free(sky_rgb);
 }

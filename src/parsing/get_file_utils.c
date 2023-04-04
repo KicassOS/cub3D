@@ -6,7 +6,7 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:48:11 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/04 10:43:03 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/04 20:56:21 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	*get_right_line(t_data *data, char *file_line, char *tmp, \
 	if (*detect > 0)
 	{
 		if (ft_strlen(tmp) == 1)
-			return (free(tmp), NULL);
+			return (NULL);
 	}
 	return (file_line);
 }
@@ -97,7 +97,6 @@ char	*cub_to_str(t_data *data, char *file)
 			file_store = get_right_line(data, file_store, tmp, &detect);
 			if (!file_store)
 				break ;
-			free_str(tmp);
 		}
 		tmp = get_next_line(data, fd);
 	}

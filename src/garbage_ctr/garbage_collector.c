@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   garbage_collector.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 12:45:02 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/02 17:33:13 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 21:17:35 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_malloc(t_data *data, int len)
 
 	node = malloc(len);
 	if (!node)
-		return (NULL);
+		error_handler(data, MALLOC_ERROR);
 	if (add_addr_to_garbage(&data, node) != SUCCESS)
 		error_handler(data, MALLOC_ERROR);
 	return (node);

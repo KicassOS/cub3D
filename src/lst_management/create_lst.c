@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_lst.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 15:53:44 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:44:37 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 21:24:32 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_node	*lst_new_rgb(t_data *data, char *name, char *rgb)
 	return ((t_node *)node);
 }
 
-t_node	*lst_new_garbage(void *ptr)
+t_node	*lst_new_garbage(t_data *data, void *ptr)
 {
 	t_garbage	*node;
 
@@ -64,7 +64,7 @@ t_node	*lst_new_garbage(void *ptr)
 		return (NULL);
 	node = malloc(sizeof(t_garbage));
 	if (!node)
-		return (NULL);
+		error_handler(data, MALLOC_ERROR);
 	node->next = NULL;
 	node->addr = ptr;
 	return ((t_node *)node);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   function.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/04 20:37:22 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 21:25:42 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int			add_direction_params(t_data **data, char *name, char *path);
 t_node		*lst_new_params(t_data *data, char *line);
 t_node		*lst_new_direction(t_data *data, char *name, char *path);
 t_node		*lst_new_rgb(t_data *data, char *name, char *rgb);
-t_node		*lst_new_garbage(void *ptr);
+t_node		*lst_new_garbage(t_data *data, void *ptr);
 void		print_params_content(t_params *node);
 void		print_direction_list(t_direction *node);
 void		print_colors_list(t_colors *node);
@@ -116,7 +116,5 @@ void		ft_init_rays(t_data *data, t_raycaster *rayc);
 void		ft_distance_to_wall(char **map, t_raycaster *rayc);
 void		ft_get_wall_height(t_raycaster *rayc);
 void		ft_get_wall_pixel(t_data *data, t_raycaster *rayc);
-
-char		**ft_split_str(char const *s, char c);
 
 #endif

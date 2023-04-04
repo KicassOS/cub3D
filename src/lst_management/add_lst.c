@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add_lst.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:08:30 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:44:33 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 21:26:43 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	add_addr_to_garbage(t_data **data, void *ptr)
 	tmp = NULL;
 	if (!(*data)->garbage_ctr)
 	{
-		(*data)->garbage_ctr = (t_garbage *)lst_new_garbage(ptr);
+		(*data)->garbage_ctr = (t_garbage *)lst_new_garbage(*data, ptr);
 		if (!(*data)->garbage_ctr)
 		{
 			return (MALLOC_ERROR);
@@ -104,7 +104,7 @@ int	add_addr_to_garbage(t_data **data, void *ptr)
 	}
 	tmp = (*data)->garbage_ctr;
 	tmp = (t_garbage *)get_last_node((t_node *)(tmp));
-	tmp->next = (t_garbage *)lst_new_garbage(ptr);
+	tmp->next = (t_garbage *)lst_new_garbage(*data, ptr);
 	if (!tmp->next)
 		return (MALLOC_ERROR);
 	return (SUCCESS);

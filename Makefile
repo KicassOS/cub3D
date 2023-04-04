@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+         #
+#    By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
-#    Updated: 2023/04/04 20:36:12 by pszleper         ###   ########.fr        #
+#    Updated: 2023/04/04 21:24:04 by gkitoko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
 
 NAME = cub3D
 
@@ -38,7 +38,6 @@ SRC =		src/error_handler/error_handler.c		\
 			src/lib/ft_strncmp.c					\
 			src/lib/ft_strnstr.c					\
 			src/lib/ft_strrchr.c					\
-			src/lib/ft_split_str.c					\
 			src/lst_management/add_lst.c			\
 			src/lst_management/create_lst.c			\
 			src/lst_management/init_lst.c			\

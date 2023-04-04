@@ -6,7 +6,7 @@
 /*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:40:36 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/04 10:44:01 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/04 21:10:22 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ char	*ft_save(t_data *data, char *save)
 	while (save[i])
 		buffer[j++] = save[i++];
 	buffer[j] = '\0';
-	free_str(save);
 	return (buffer);
 }
 
@@ -75,15 +74,11 @@ char	*read_line(t_data *data, int fd, char *save, int *v_read)
 	{
 		*v_read = read(fd, buffer, BUFFER_SIZE);
 		if (*v_read == -1)
-		{
-			free_str(buffer);
 			return (NULL);
-		}
 		buffer[*v_read] = '\0';
 		if (*v_read)
 			save = ft_strjoin_line(data, save, buffer);
 	}
-	free_str(buffer);
 	return (save);
 }
 
@@ -94,18 +89,13 @@ char	*get_next_line(t_data *data, int fd)
 	int			ret;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-	{
-		free_str(save);
 		return (NULL);
-	}
 	save = read_line(data, fd, save, &ret);
 	if (!save)
 		return (NULL);
 	buffer = ft_get_line(data, save);
 	if (!buffer)
-		return (free_str(buffer), NULL);
+		return (NULL);
 	save = ft_save(data, save);
-	if (!ret)
-		free_str(save);
 	return (buffer);
 }
