@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 04:34:19 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/01 21:02:25 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 20:12:28 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,33 +71,19 @@ void	ft_distance_to_wall(char **map, t_raycaster *rayc)
 	}
 }
 
-void	ft_get_wall_height(t_raycaster *rayc)
+void	ft_get_tex_x(t_data *data, t_raycaster *rayc)
 {
 	if (rayc->side == VERTICAL)
-		rayc->distance = rayc->sidedist_x - rayc->deltadist_x;
+		rayc->wall_x = data->player.y + rayc->distance * -rayc->raydir_y;
 	else
-		rayc->distance = rayc->sidedist_y - rayc->deltadist_y;
-	rayc->line_height = (int)(SCREEN_HEIGHT / rayc->distance);
-	rayc->draw_start = -rayc->line_height / 2 + SCREEN_HEIGHT / 2;
-	if (rayc->draw_start < 0)
-		rayc->draw_start = 0;
-	rayc->draw_end = rayc->line_height / 2 + SCREEN_HEIGHT / 2;
-	if (rayc->draw_end >= SCREEN_HEIGHT)
-		rayc->draw_end = SCREEN_HEIGHT - 1;
+		rayc->wall_x = data->player.x + rayc->distance * rayc->raydir_x;
+	rayc->wall_x -= floor(rayc->wall_x);
+	rayc->tex_x = (int)(rayc->wall_x * (double)TEXTURE_SIZE);
 }
 
 void	ft_get_wall_pixel(t_data *data, t_raycaster *rayc)
 {
-	if (rayc->side == VERTICAL)
-		rayc->wall_x = (int)data->player.y + rayc->distance * rayc->raydir_y;
-	else
-		rayc->wall_x = (int)data->player.x + rayc->distance * rayc->raydir_x;
-	rayc->wall_x -= floor(rayc->wall_x);
-	rayc->tex_x = (int)(rayc->wall_x * (double)TEXTURE_SIZE);
-	if (rayc->side == VERTICAL && rayc->raydir_x > 0)
-		rayc->tex_x = TEXTURE_SIZE - rayc->tex_x - 1;
-	if (rayc->side == HORIZONTAL && rayc->raydir_y < 0)
-		rayc->tex_x = TEXTURE_SIZE - rayc->tex_x - 1;
+	ft_get_tex_x(data, rayc);
 	rayc->step = 1.0 * TEXTURE_SIZE / rayc->line_height;
 	rayc->tex_pos = (rayc->draw_start - (SCREEN_HEIGHT / 2) \
 	+ rayc->line_height / 2) * rayc->step;
