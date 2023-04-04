@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:48:11 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/04 00:21:32 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:43:03 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ char	*cub_to_str(t_data *data, char *file)
 
 	ft_init_cub_to_str(file, &fd, &detect, data);
 	file_store = NULL;
-	tmp = get_next_line(fd);
+	tmp = get_next_line(data, fd);
 	while (tmp)
 	{
 		if (tmp)
@@ -99,9 +99,9 @@ char	*cub_to_str(t_data *data, char *file)
 				break ;
 			free_str(tmp);
 		}
-		tmp = get_next_line(fd);
+		tmp = get_next_line(data, fd);
 	}
-	get_next_line(-1);
+	get_next_line(data, -1);
 	close(fd);
 	return (file_store);
 }

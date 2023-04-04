@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   function.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:21:24 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/03 08:44:58 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:41:52 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define FUNCTION_H
 
 // GET_NEXT_VALID
-char		*ft_strjoin_line(char *s1, char *s2);
-char		*get_next_line(int fd);
+char		*ft_strjoin_line(t_data *data, char *s1, char *s2);
+char		*get_next_line(t_data *data ,int fd);
 void		free_str(char *str);
 // LST MANAGEMENT
 void		ft_init_data(t_data *data);

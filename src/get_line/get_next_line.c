@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:40:36 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:42:15 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:44:01 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/define.h"
 
-char	*ft_get_line(char *save)
+char	*ft_get_line(t_data *data, char *save)
 {
 	int		i;
 	char	*buffer;
@@ -22,9 +22,9 @@ char	*ft_get_line(char *save)
 		return (NULL);
 	while (save[i] && save[i] != '\n')
 		i++;
-	buffer = malloc(sizeof(char) * i + 2);
+	buffer = ft_malloc(data, sizeof(char) * i + 2);
 	if (!buffer)
-		return (NULL);
+		error_handler(data, MALLOC_ERROR);
 	i = 0;
 	while (save[i] && save[i] != '\n')
 	{
@@ -40,7 +40,7 @@ char	*ft_get_line(char *save)
 	return (buffer);
 }
 
-char	*ft_save(char *save)
+char	*ft_save(t_data *data, char *save)
 {
 	int		i;
 	int		j;
@@ -51,9 +51,9 @@ char	*ft_save(char *save)
 		i++;
 	if (!save[i])
 		return (free_str(save), NULL);
-	buffer = malloc(sizeof(char) * (strlen(save) - i + 1));
+	buffer = ft_malloc(data, sizeof(char) * (strlen(save) - i + 1));
 	if (!buffer)
-		return (NULL);
+		error_handler(data, MALLOC_ERROR);
 	i++;
 	j = 0;
 	while (save[i])
@@ -63,13 +63,13 @@ char	*ft_save(char *save)
 	return (buffer);
 }
 
-char	*read_line(int fd, char *save, int *v_read)
+char	*read_line(t_data *data, int fd, char *save, int *v_read)
 {
 	char	*buffer;
 
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	buffer = ft_malloc(data, sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
-		return (NULL);
+		error_handler(data, MALLOC_ERROR);
 	*v_read = 1;
 	while (!ft_strchr(save, '\n') && *v_read != 0)
 	{
@@ -81,13 +81,13 @@ char	*read_line(int fd, char *save, int *v_read)
 		}
 		buffer[*v_read] = '\0';
 		if (*v_read)
-			save = ft_strjoin_line(save, buffer);
+			save = ft_strjoin_line(data, save, buffer);
 	}
 	free_str(buffer);
 	return (save);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(t_data *data, int fd)
 {
 	char		*buffer;
 	static char	*save = (char *)0;
@@ -98,13 +98,13 @@ char	*get_next_line(int fd)
 		free_str(save);
 		return (NULL);
 	}
-	save = read_line(fd, save, &ret);
+	save = read_line(data, fd, save, &ret);
 	if (!save)
 		return (NULL);
-	buffer = ft_get_line(save);
+	buffer = ft_get_line(data, save);
 	if (!buffer)
 		return (free_str(buffer), NULL);
-	save = ft_save(save);
+	save = ft_save(data, save);
 	if (!ret)
 		free_str(save);
 	return (buffer);
