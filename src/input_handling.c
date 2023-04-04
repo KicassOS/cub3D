@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 06:11:34 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/03 08:37:41 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:32:00 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	ft_handle_keypress(int key, t_data *data)
 {
 	if (key == XK_Escape)
 		ft_free_exit(data);
-	if (key == XK_W || key == XK_w)
+	if (key == XK_W || key == XK_w || key == XK_Up)
 		data->keys_pressed.w_pressed = true;
 	if (key == XK_A || key == XK_a)
 		data->keys_pressed.a_pressed = true;
-	if (key == XK_S || key == XK_s)
+	if (key == XK_S || key == XK_s || key == XK_Down)
 		data->keys_pressed.s_pressed = true;
 	if (key == XK_D || key == XK_d)
 		data->keys_pressed.d_pressed = true;
@@ -33,11 +33,11 @@ int	ft_handle_keypress(int key, t_data *data)
 
 int	ft_handle_keyrelease(int key, t_data *data)
 {
-	if (key == XK_W || key == XK_w)
+	if (key == XK_W || key == XK_w || key == XK_Up)
 		data->keys_pressed.w_pressed = false;
 	if (key == XK_A || key == XK_a)
 		data->keys_pressed.a_pressed = false;
-	if (key == XK_S || key == XK_s)
+	if (key == XK_S || key == XK_s || key == XK_Down)
 		data->keys_pressed.s_pressed = false;
 	if (key == XK_D || key == XK_d)
 		data->keys_pressed.d_pressed = false;
