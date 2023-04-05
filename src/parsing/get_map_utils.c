@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:00:55 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:45:05 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/05 13:12:57 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	is_valid_element(t_data *data, char c)
 {
 	if (c == '1' || c == '0')
 		return (SUCCESS);
-	if (c == ' ' || (c >= '\a' && c <= '\r'))
+	if (ft_isspace(c))
 		return (SUCCESS);
 	if (c == 'N' || c == 'E' || c == 'S' || c == 'W')
 		return (SUCCESS);
@@ -45,15 +45,13 @@ void	requirement_map_loop(t_data *data, char *map, unsigned int line,
 	check_wall(data, map);
 	if (line == data->map_size && check_only_one(data, map) != SUCCESS)
 		error_handler(data, MAP_ERROR);
-	while (*map && (*map == ' ' || (*map >= '\a' && *map <= '\r')))
+	while (*map && ft_isspace(*map))
 		map++;
 	while (*map)
 	{
 		is_valid_element(data, *map);
-		if (is_floor(*map) == SUCCESS)
-			counter[0]++;
 		if (is_position(*map) == SUCCESS)
-			counter[1]++;
+			(*counter)++;
 		map++;
 	}
 }

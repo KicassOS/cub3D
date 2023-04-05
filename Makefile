@@ -6,7 +6,7 @@
 #    By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
-#    Updated: 2023/04/04 21:24:04 by gkitoko          ###   ########.fr        #
+#    Updated: 2023/04/05 13:11:59 by gkitoko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC =		src/error_handler/error_handler.c		\
 			src/getters/getters_rgb_path.c			\
 			src/parsing/info_loading.c				\
 			src/lib/ft_atoi.c						\
+			src/lib/ft_isspace.c 					\
 			src/lib/ft_isdigit.c					\
 			src/lib/ft_putchar_fd.c					\
 			src/lib/ft_putnbr_fd.c					\

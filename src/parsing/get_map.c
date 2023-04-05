@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:50:18 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:45:06 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/05 13:03:26 by gkitoko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ int	requirement_map_checker(t_data *data)
 {
 	char			**map;
 	unsigned int	index;
-	int				counter[2];
+	int				counter;
 	unsigned int	line;
 
-	counter[0] = 0;
-	counter[1] = 0;
+	counter = 0;
 	line = 0;
 	if (!data->file_arr)
 		return (INVALID_VALUE);
@@ -30,12 +29,10 @@ int	requirement_map_checker(t_data *data)
 		error_handler(data, MAP_ERROR);
 	while (map[index])
 	{
-		requirement_map_loop(data, map[index], line++, counter);
+		requirement_map_loop(data, map[index], line++, &counter);
 		index++;
 	}
-	if (counter[0] == 0)
-		error_handler(data, MAP_ERROR);
-	if (counter[1] != 1)
+	if (counter != 1)
 		error_handler(data, MAP_ERROR);
 	return (SUCCESS);
 }
