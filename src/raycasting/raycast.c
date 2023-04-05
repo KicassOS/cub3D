@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycast.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 04:34:19 by pszleper          #+#    #+#             */
-/*   Updated: 2023/04/04 20:12:28 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:17:03 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,9 @@ void	ft_get_tex_x(t_data *data, t_raycaster *rayc)
 		rayc->wall_x = data->player.x + rayc->distance * rayc->raydir_x;
 	rayc->wall_x -= floor(rayc->wall_x);
 	rayc->tex_x = (int)(rayc->wall_x * (double)TEXTURE_SIZE);
+	if ((rayc->side == VERTICAL && rayc->raydir_x < 0)
+		|| (rayc->side == HORIZONTAL && rayc->raydir_y < 0))
+		rayc->tex_x = TEXTURE_SIZE - rayc->tex_x - 1;
 }
 
 void	ft_get_wall_pixel(t_data *data, t_raycaster *rayc)
