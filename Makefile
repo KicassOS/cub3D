@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+         #
+#    By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
-#    Updated: 2023/04/05 13:11:59 by gkitoko          ###   ########.fr        #
+#    Updated: 2023/04/05 17:04:35 by pszleper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-FLAGS = -g -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 NAME = cub3D
 
