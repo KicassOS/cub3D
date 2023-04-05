@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gkitoko <gkitoko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 03:18:08 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/04 21:12:43 by gkitoko          ###   ########.fr       */
+/*   Updated: 2023/04/05 12:00:50 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	free_str(char *str)
 {
-	free(str);
-	str = NULL;
+	(void) str;
 }
 
 char	*ft_strjoin_line(t_data *data, char *s1, char *s2)
