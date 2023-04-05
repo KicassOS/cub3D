@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+         #
+#    By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/28 17:06:58 by pszleper          #+#    #+#              #
-#    Updated: 2023/04/05 17:04:35 by pszleper         ###   ########.fr        #
+#    Updated: 2023/04/05 20:41:12 by pszleper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,14 +68,14 @@ SRC =		src/error_handler/error_handler.c		\
 
 OBJECTS = $(SRC:.c=.o)
 
-HEADER = includes/define.h
+HEADER = includes/define.h includes/function.h includes/struct.h includes/mlx.h includes/libft.h
 
 all: libmlx_Linux.a $(NAME)
 
-$(NAME): $(OBJECTS)
-	$(CC) $(OBJECTS) -Lminilibx-linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+$(NAME): $(OBJECTS) libmlx_Linux.a $(HEADER)
+	$(CC) $(FLAGS) $(OBJECTS) -Lminilibx-linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
-%.o: %.c
+%.o: %.c $(HEADER)
 	$(CC) $(FLAGS) -c -I/usr/include -Iincludes -Imlx_linux -lm $< -o $@
 
 libmlx_Linux.a:
