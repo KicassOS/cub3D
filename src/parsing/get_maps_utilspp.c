@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_maps_utilspp.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:48:16 by gkitoko           #+#    #+#             */
-/*   Updated: 2023/04/01 03:45:06 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/04/09 05:50:30 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	check_map_cell(t_data *data, char **map, unsigned int index, int j)
 {
 	if (map[index][j] == '0' || map[index][j] == 'N' ||
-		map[index][j] == 'E' || map[index][j] == 'A' ||
+		map[index][j] == 'E' || map[index][j] == 'S' ||
 		map[index][j] == 'W')
 	{
 		check_is_space(data, map, index, j);
